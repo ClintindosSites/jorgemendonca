@@ -7,8 +7,6 @@ export default function SobrePage() {
     <>
       <HeroSobre />
       <NossaHistoria />
-
-      <CTAAnaliseCredito />
     </>
   );
 }

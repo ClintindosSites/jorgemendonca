@@ -8,6 +8,8 @@
   --azul-marinho-real: #1a2b4c;
   --cinza-grafite: #333333;
   --dourado-champange: #c5a059;
+  --font-heading: var(--font-manrope);
+  --font-body: var(--font-inter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +22,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), sans-serif;
+  letter-spacing: -0.025em;
 }
 .cta-button {
   background-color: var(--dourado-champange);

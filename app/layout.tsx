@@ -1,28 +1,63 @@
 import type { Metadata } from "next";
-
 import { GoogleTagManager } from "@next/third-parties/google";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope, Inter } from "next/font/google";
+
 import "./globals.css";
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CookieConsent from "@/components/CookieConsent";
 import WhatsappFloat from "@/components/WhatsappFloat";
-const geistSans = Geist({
-  variable: "--font-montserrat-sans",
+
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-poppins-sans",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  display: "swap",
 });
-
 export const metadata: Metadata = {
-  title: "Jorge Miguel Mendonça | Intermediação de Crédito",
-  description:
-    "Intermediário de Crédito Vinculado registado no Banco de Portugal.",
-};
+  title: "Jorge Mendonça | Consultor de Crédito Internacional",
 
+  description:
+    "Consultor de Crédito Internacional com acompanhamento pessoal de pedidos de financiamento a partir de 30.000 €.",
+
+  metadataBase: new URL("https://jorgemendonca.com"),
+
+  alternates: {
+    canonical: "/",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+
+  openGraph: {
+    title: "Jorge Mendonça | Consultor de Crédito Internacional",
+    description:
+      "Acompanhamento pessoal de pedidos de financiamento a partir de 30.000 €.",
+    url: "https://jorgemendonca.com",
+    siteName: "Jorge Mendonça",
+    type: "website",
+    images: [
+      {
+        url: "/logo-meta.png",
+        width: 1200,
+        height: 630,
+        alt: "Jorge Mendonça | Consultor de Crédito Internacional",
+      },
+    ],
+  },
+
+  icons: {
+    icon: "/logo-meta.png",
+  },
+};
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -82,9 +117,7 @@ jorge miguel mendonça crédito
         <link rel="canonical" href="https://jorgemendonca.com/" />
         <link rel="shortcut icon" href="/logo-meta.png" type="image/x-icon" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${manrope.variable} ${inter.variable} antialiased`}>
         <GoogleTagManager gtmId="GTM-PMK23MLG" />
         <Header />
 

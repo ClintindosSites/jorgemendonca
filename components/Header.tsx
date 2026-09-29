@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,31 +28,53 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-[#1A2B4C] text-[#c5a059] rounded-lg flex items-center justify-center  font-bold">
-              JM
-            </div>
+            <Image
+              src={"/images/logo.webp"}
+              width={50}
+              height={60}
+              alt="Logomarca"
+            />
 
             <div className="leading-tight">
-              <p className="font-semibold text-[#1A2B4C]">Jorge Mendonça</p>
+              <p className="text-2xl font-semibold text-[#006f34]">
+                Jorge Mendonça
+              </p>
               <p className="text-xs text-gray-500">
-                Crédito pessoal e empresarial
+                Consultor de Crédito Internacional
               </p>
             </div>
           </Link>
 
           {/* Desktop Menu */}
           <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
-            <Link href="/" className="hover:text-[#1A2B4C]">
+            <Link href="/" className="hover:text-[#006f34] hover:font-bold">
               Início
             </Link>
-            <Link href="/servicos" className="hover:text-[#1A2B4C]">
-              Serviços
-            </Link>
-            <Link href="/sobre" className="hover:text-[#1A2B4C]">
+            <Link
+              href="/sobre"
+              className="hover:text-[#006f34] hover:font-bold"
+            >
               Sobre
             </Link>
-            <Link href="/contactos" className="hover:text-[#1A2B4C]">
-              Contactos
+            <Link
+              href="/servicos"
+              className="hover:text-[#006f34] hover:font-bold"
+            >
+              Como funciona
+            </Link>
+
+            <Link
+              href="/informativos"
+              className="hover:text-[#006f34] hover:font-bold"
+            >
+              Informativos
+            </Link>
+
+            <Link
+              href="/contactos"
+              className="hover:text-[#006f34] hover:font-bold"
+            >
+              Contacto
             </Link>
           </nav>
 
@@ -59,9 +82,9 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/simulacao"
-              className="bg-[#C5A059] hover:bg-[#b08f4d] text-white font-semibold px-6 py-3 rounded-lg transition"
+              className="bg-[#006f34] hover:bg-[#b08f4d] text-white font-semibold px-6 py-3 rounded-lg transition"
             >
-              Pedir Simulação
+              Apresentar pedido
             </Link>
           </div>
 
@@ -102,16 +125,18 @@ export default function Header() {
             Início
           </Link>
 
-          <Link href="/servicos" onClick={() => setOpen(false)}>
-            Serviços
-          </Link>
-
           <Link href="/sobre" onClick={() => setOpen(false)}>
             Sobre
           </Link>
 
+          <Link href="/servicos" onClick={() => setOpen(false)}>
+            Como funciona
+          </Link>
+          <Link href="/informativos" onClick={() => setOpen(false)}>
+            Informativos
+          </Link>
           <Link href="/contactos" onClick={() => setOpen(false)}>
-            Contactos
+            Contacto
           </Link>
 
           <Link
@@ -119,7 +144,7 @@ export default function Header() {
             className="bg-[#C5A059] text-white text-center py-3 rounded-lg font-semibold mt-4"
             onClick={() => setOpen(false)}
           >
-            Pedir Simulação
+            Apresentar pedido
           </Link>
         </nav>
       </div>
