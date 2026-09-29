@@ -78,7 +78,14 @@ export default function Informativos() {
           HERO
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-[#102A43] px-6 py-24 text-white lg:py-32">
+      <section className="relative overflow-hidden bg-[#102A43] bg-[url('/images/informativos-hero.webp')] bg-cover bg-center bg-no-repeat px-6 py-20 text-white lg:py-28">
+        {/* OVERLAY */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-r from-[#102A43]/95 via-[#102A43]/65 to-[#102A43]/20"
+        />
+
+        {/* CAMADA DIREITA */}
         <div
           aria-hidden="true"
           className="absolute right-0 top-0 h-full w-1/3 bg-[#006f34]/10"
@@ -89,12 +96,12 @@ export default function Informativos() {
             <div className="mb-6 flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
                 Informativos
               </span>
             </div>
 
-            <h1 className="font-(family-name:--font-manrope) text-5xl font-semibold leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
+            <h1 className="font-(family-name:--font-manrope) text-5xl leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
               Informação para
               <br />
               <span className="text-[#69B578]">
@@ -121,12 +128,12 @@ export default function Informativos() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                   Em destaque
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl tracking-[-0.03em] text-[#102A43] md:text-5xl">
                 Conteúdos em destaque
               </h2>
             </div>
@@ -146,11 +153,11 @@ export default function Informativos() {
               </div>
 
               <div className="absolute bottom-8 left-8 right-8">
-                <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#69B578]">
+                <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#69B578]">
                   Financiamento
                 </p>
 
-                <p className="mt-3 max-w-md font-(family-name:--font-manrope) text-2xl font-semibold leading-tight text-white">
+                <p className="mt-3 max-w-md font-(family-name:--font-manrope) text-2xl  leading-tight text-white">
                   Informação clara antes de tomar uma decisão.
                 </p>
               </div>
@@ -160,7 +167,7 @@ export default function Informativos() {
 
             <div className="flex flex-col justify-center p-8 lg:p-12">
               <div className="flex items-center gap-3">
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#006f34]">
                   {artigos[0].categoria}
                 </span>
 
@@ -171,7 +178,7 @@ export default function Informativos() {
                 </span>
               </div>
 
-              <h3 className="mt-5 font-(family-name:--font-manrope) text-3xl font-semibold leading-tight tracking-[-0.03em] text-[#102A43]">
+              <h3 className="mt-5 font-(family-name:--font-manrope) text-3xl  leading-tight tracking-[-0.03em] text-[#102A43]">
                 {artigos[0].titulo}
               </h3>
 
@@ -182,7 +189,7 @@ export default function Informativos() {
               <div className="mt-8">
                 <Link
                   href="/informativos/antes-de-apresentar-um-pedido"
-                  className="inline-flex items-center gap-3 font-(family-name:--font-inter) text-sm font-semibold text-[#147D86] transition-colors hover:text-[#106A72]"
+                  className="inline-flex items-center gap-3 font-(family-name:--font-inter) text-sm  text-[#147D86] transition-colors hover:text-[#106A72]"
                 >
                   Ler informativo
                   <ArrowRight size={17} />
@@ -203,12 +210,12 @@ export default function Informativos() {
             <div className="mb-5 flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                 Áreas de informação
               </span>
             </div>
 
-            <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-5xl">
+            <h2 className="font-(family-name:--font-manrope) text-4xl tracking-[-0.03em] text-[#102A43] md:text-5xl">
               Encontre informação sobre o que procura.
             </h2>
           </div>
@@ -226,7 +233,7 @@ export default function Informativos() {
                     <Icon size={20} strokeWidth={1.5} />
                   </div>
 
-                  <h3 className="mt-7 font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+                  <h3 className="mt-7 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                     {categoria.nome}
                   </h3>
 
@@ -251,12 +258,12 @@ export default function Informativos() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                   Todos os informativos
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl tracking-[-0.03em] text-[#102A43] md:text-5xl">
                 Informação útil
               </h2>
             </div>
@@ -269,16 +276,16 @@ export default function Informativos() {
                 className="group border border-[#D9E1E5] bg-white p-7 transition-all hover:-translate-y-1 hover:shadow-[0_12px_35px_rgba(16,42,67,0.08)] lg:p-8"
               >
                 <div className="flex items-center justify-between">
-                  <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#006f34]">
+                  <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#006f34]">
                     {artigo.categoria}
                   </span>
 
-                  <span className="font-(family-name:--font-manrope) text-3xl font-semibold text-[#E8EEF0]">
+                  <span className="font-(family-name:--font-manrope) text-3xl  text-[#E8EEF0]">
                     0{index + 2}
                   </span>
                 </div>
 
-                <h3 className="mt-8 font-(family-name:--font-manrope) text-2xl font-semibold leading-tight tracking-[-0.02em] text-[#102A43]">
+                <h3 className="mt-8 font-(family-name:--font-manrope) text-2xl  leading-tight tracking-[-0.02em] text-[#102A43]">
                   {artigo.titulo}
                 </h3>
 
@@ -289,7 +296,7 @@ export default function Informativos() {
                 <div className="mt-7 border-t border-[#E2E8EB] pt-6">
                   <Link
                     href={`/informativos/${index === 0 ? "credito-pessoal" : index === 1 ? "documentacao" : "credito-empresarial"}`}
-                    className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-sm font-semibold text-[#147D86] transition-colors group-hover:text-[#106A72]"
+                    className="inline-flex items-center gap-2 font-(family-name:--font-inter) text-sm  text-[#147D86] transition-colors group-hover:text-[#106A72]"
                   >
                     Ler informativo
                     <ArrowRight size={16} />
@@ -313,7 +320,7 @@ export default function Informativos() {
             </div>
 
             <div>
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.15em] text-[#69B578]">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.15em] text-[#69B578]">
                 Nota informativa
               </p>
 
@@ -336,11 +343,11 @@ export default function Informativos() {
       <section className="bg-white px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-5xl border border-[#D9E1E5] bg-[#F7F9FA] px-7 py-12 text-center sm:px-12 lg:px-16">
           <div className="mx-auto max-w-3xl">
-            <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
               Próximo passo
             </span>
 
-            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-4xl">
+            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl  tracking-[-0.03em] text-[#102A43] md:text-4xl">
               Tem uma necessidade de financiamento?
             </h2>
 
@@ -352,7 +359,7 @@ export default function Informativos() {
             <div className="mt-8">
               <Link
                 href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />

@@ -27,7 +27,7 @@ export default function HeroSobre() {
 
           <h1
             id="sobre-title"
-            className="font-(family-name:--font-manrope) text-5xl font-semibold leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
+            className="font-(family-name:--font-manrope) text-5xl  leading-[1.02] tracking-[-0.04em] sm:text-6xl lg:text-7xl"
           >
             Experiência, proximidade
             <br />e acompanhamento.

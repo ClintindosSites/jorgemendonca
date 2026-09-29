@@ -26,12 +26,12 @@ export default function ComoFunciona() {
             <div className="mb-6 flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
                 Como funciona
               </span>
             </div>
 
-            <h1 className="font-(family-name:--font-manrope) text-5xl font-semibold leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
+            <h1 className="font-(family-name:--font-manrope) text-5xl  leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
               Um processo claro,
               <br />
               <span className="text-[#69B578]">
@@ -48,7 +48,7 @@ export default function ComoFunciona() {
             <div className="mt-10">
               <Link
                 href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />
@@ -69,12 +69,12 @@ export default function ComoFunciona() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                   O processo
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
                 Três etapas para tornar o processo mais simples.
               </h2>
             </div>
@@ -111,16 +111,16 @@ export default function ComoFunciona() {
                   <Send size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl font-semibold text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
                   01
                 </span>
               </div>
 
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#006f34]">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#006f34]">
                 Primeiro passo
               </p>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl  text-[#102A43]">
                 Apresente o seu pedido
               </h3>
 
@@ -150,16 +150,16 @@ export default function ComoFunciona() {
                   <MessageCircle size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl font-semibold text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
                   02
                 </span>
               </div>
 
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#006f34]">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#006f34]">
                 Segundo passo
               </p>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl  text-[#102A43]">
                 Contacto e esclarecimento
               </h3>
 
@@ -190,16 +190,16 @@ export default function ComoFunciona() {
                   <FileText size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl font-semibold text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
                   03
                 </span>
               </div>
 
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#006f34]">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#006f34]">
                 Terceiro passo
               </p>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl  text-[#102A43]">
                 Condições e decisão
               </h3>
 
@@ -236,12 +236,12 @@ export default function ComoFunciona() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                   Informação inicial
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
                 O que precisamos para começar?
               </h2>
 
@@ -260,7 +260,7 @@ export default function ComoFunciona() {
                   </div>
 
                   <div>
-                    <h3 className="font-(family-name:--font-manrope) text-base font-semibold text-[#102A43]">
+                    <h3 className="font-(family-name:--font-manrope) text-base  text-[#102A43]">
                       Dados do pedido
                     </h3>
 
@@ -278,7 +278,7 @@ export default function ComoFunciona() {
                   </div>
 
                   <div>
-                    <h3 className="font-(family-name:--font-manrope) text-base font-semibold text-[#102A43]">
+                    <h3 className="font-(family-name:--font-manrope) text-base  text-[#102A43]">
                       Contacto
                     </h3>
 
@@ -297,7 +297,7 @@ export default function ComoFunciona() {
                   </div>
 
                   <div>
-                    <h3 className="font-(family-name:--font-manrope) text-base font-semibold text-[#102A43]">
+                    <h3 className="font-(family-name:--font-manrope) text-base  text-[#102A43]">
                       Informação complementar
                     </h3>
 
@@ -322,14 +322,14 @@ export default function ComoFunciona() {
           <div className="mx-auto mb-5 flex items-center justify-center gap-3">
             <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
 
-            <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
               Importante
             </span>
 
             <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
           </div>
 
-          <h2 className="font-(family-name:--font-manrope) text-3xl font-semibold tracking-[-0.03em] md:text-4xl">
+          <h2 className="font-(family-name:--font-manrope) text-3xl  tracking-[-0.03em] md:text-4xl">
             O acompanhamento não substitui a decisão de crédito.
           </h2>
 
@@ -352,21 +352,21 @@ export default function ComoFunciona() {
             <div className="mb-5 flex items-center justify-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                 Perguntas frequentes
               </span>
 
               <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
             </div>
 
-            <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-5xl">
+            <h2 className="font-(family-name:--font-manrope) text-4xl  tracking-[-0.03em] text-[#102A43] md:text-5xl">
               Antes de apresentar o pedido
             </h2>
           </div>
 
           <div className="mt-12 divide-y divide-[#D9E1E5] border-y border-[#D9E1E5]">
             <details className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                 Quanto tempo demora o processo?
                 <span className="text-2xl font-normal text-[#147D86] transition-transform group-open:rotate-45">
                   +
@@ -381,7 +381,7 @@ export default function ComoFunciona() {
             </details>
 
             <details className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                 O pedido garante aprovação?
                 <span className="text-2xl font-normal text-[#147D86] transition-transform group-open:rotate-45">
                   +
@@ -396,7 +396,7 @@ export default function ComoFunciona() {
             </details>
 
             <details className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                 Que documentos são necessários?
                 <span className="text-2xl font-normal text-[#147D86] transition-transform group-open:rotate-45">
                   +
@@ -412,7 +412,7 @@ export default function ComoFunciona() {
             </details>
 
             <details className="group py-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                 Posso apresentar um pedido online?
                 <span className="text-2xl font-normal text-[#147D86] transition-transform group-open:rotate-45">
                   +
@@ -436,11 +436,11 @@ export default function ComoFunciona() {
       <section className="bg-white px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-5xl border border-[#D9E1E5] bg-[#F7F9FA] px-7 py-12 text-center sm:px-12 lg:px-16">
           <div className="mx-auto max-w-3xl">
-            <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
               Próximo passo
             </span>
 
-            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-4xl">
+            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl  tracking-[-0.03em] text-[#102A43] md:text-4xl">
               Está pronto para apresentar o seu pedido?
             </h2>
 
@@ -452,7 +452,7 @@ export default function ComoFunciona() {
             <div className="mt-8">
               <Link
                 href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />

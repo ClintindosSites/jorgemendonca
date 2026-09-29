@@ -36,7 +36,7 @@ export default function ComoFunciona() {
       {/* Elemento decorativo */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full border border-[#BD965A]/20"
+        className="pointer-events-none absolute -right-32 top-20 h-72 w-72 rounded-full border border-[#006f34]/20"
       />
 
       <div
@@ -48,14 +48,14 @@ export default function ComoFunciona() {
         {/* Cabeçalho */}
         <div className="max-w-3xl">
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#BD965A]" />
+            <span className="h-px w-10 bg-[#006f34]" />
 
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#147D86]">
+            <span className="text-sm  uppercase tracking-[0.18em] text-[#006f34]">
               Como funciona
             </span>
           </div>
 
-          <h2 className="font-[var(--font-heading)] text-4xl font-semibold leading-[1.08] tracking-[-0.03em] text-[#102A43] sm:text-5xl lg:text-6xl">
+          <h2 className="font-(--font-heading) text-4xl  leading-[1.08] tracking-[-0.03em] text-[#102A43] sm:text-5xl lg:text-6xl">
             Um processo claro,
             <br />
             acompanhado passo a passo.
@@ -86,7 +86,7 @@ export default function ComoFunciona() {
                 >
                   {/* Número / ícone */}
                   <div className="relative z-10 mb-8 flex items-center justify-between">
-                    <span className="font-[var(--font-heading)] text-sm font-bold tracking-[0.16em] text-[#BD965A]">
+                    <span className="font-(--font-heading) text-sm  tracking-[0.16em] text-[#006f34]">
                       {step.number}
                     </span>
 
@@ -99,7 +99,7 @@ export default function ComoFunciona() {
                     </div>
                   </div>
 
-                  <h3 className="font-[var(--font-heading)] text-2xl font-semibold tracking-[-0.02em] text-[#102A43]">
+                  <h3 className="font-(--font-heading) text-2xl  tracking-[-0.02em] text-[#102A43]">
                     {step.title}
                   </h3>
 
@@ -108,7 +108,7 @@ export default function ComoFunciona() {
                   </p>
 
                   {/* Pequeno detalhe visual */}
-                  <div className="mt-8 h-px w-12 bg-[#BD965A]" />
+                  <div className="mt-8 h-px w-12 bg-[#006f34]" />
                 </article>
               );
             })}
@@ -121,12 +121,12 @@ export default function ComoFunciona() {
             <ShieldCheck
               size={22}
               strokeWidth={1.7}
-              className="text-[#BD965A]"
+              className="text-[#006f34]"
             />
           </div>
 
           <div>
-            <p className="font-[var(--font-heading)] text-base font-semibold text-white">
+            <p className="font-(--font-heading) text-base  text-white">
               Informação importante
             </p>
 
@@ -141,7 +141,7 @@ export default function ComoFunciona() {
         {/* CTA */}
         <div className="mt-12 flex flex-col items-start justify-between gap-6 border-t border-[#CBD8DE] pt-8 sm:flex-row sm:items-center">
           <div>
-            <p className="font-[var(--font-heading)] text-lg font-semibold text-[#102A43]">
+            <p className="font-(--font-heading) text-lg  text-[#102A43]">
               Pretende apresentar um pedido?
             </p>
 
@@ -152,7 +152,7 @@ export default function ComoFunciona() {
 
           <a
             href="/apresentar-pedido"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#147D86] px-6 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#0F6971]"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#147D86] px-6 py-3.5 text-sm  text-white transition-colors hover:bg-[#0F6971]"
           >
             Apresentar pedido
             <ArrowRight

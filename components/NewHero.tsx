@@ -95,7 +95,7 @@ export default function NewHero() {
           CONTEÚDO
       ====================================================== */}
 
-      <div className="relative mx-auto flex min-h-[80vh] max-w-[1280px] items-center px-6 py-24 lg:px-10">
+      <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-center px-6 py-24 lg:px-10">
         <div className="max-w-4xl">
           {/* =================================================
               EYEBROW
@@ -105,7 +105,7 @@ export default function NewHero() {
             key={`eyebrow-${current}`}
             className="animate-[heroFade_700ms_ease-out]"
           >
-            <span className="mb-6 block font-[family-name:var(--font-inter)] text-sm font-medium uppercase tracking-[0.18em] text-[#BD965A]">
+            <span className="mb-6 block font-(family-name:--font-inter) text-sm font-medium uppercase tracking-[0.18em] text-[#BD965A]">
               {slide.eyebrow}
             </span>
           </div>
@@ -116,7 +116,7 @@ export default function NewHero() {
 
           <h1
             key={`title-${current}`}
-            className="max-w-4xl animate-[heroUp_800ms_ease-out] font-[family-name:var(--font-manrope)] text-5xl leading-[0.98] tracking-[-0.04em] text-white md:text-6xl lg:text-7xl"
+            className="max-w-4xl animate-[heroUp_800ms_ease-out] font-(family-name:--font-manrope) text-5xl leading-[0.98] tracking-[-0.04em] text-white md:text-6xl lg:text-7xl"
           >
             {slide.title}
           </h1>
@@ -127,7 +127,7 @@ export default function NewHero() {
 
           <p
             key={`description-${current}`}
-            className="mt-7 max-w-2xl animate-[heroFade_900ms_ease-out] font-[family-name:var(--font-inter)] text-lg leading-8 text-white/85 md:text-xl"
+            className="mt-7 max-w-2xl animate-[heroFade_900ms_ease-out] font-(family-name:--font-inter) text-lg leading-8 text-white/85 md:text-xl"
           >
             {slide.description}
           </p>
@@ -142,7 +142,7 @@ export default function NewHero() {
           >
             <Link
               href="/apresentar-pedido"
-              className="inline-flex items-center rounded-md bg-[#147D86] px-8 py-4 font-[family-name:var(--font-inter)] text-sm font-semibold text-white transition-colors duration-300 hover:bg-[#106a72] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#102A43]"
+              className="inline-flex items-center rounded-md bg-[#147D86] px-8 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors duration-300 hover:bg-[#106a72] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-[#102A43]"
             >
               Apresentar pedido
             </Link>
@@ -154,7 +154,7 @@ export default function NewHero() {
 
           <p
             key={`legal-${current}`}
-            className="mt-5 max-w-xl animate-[heroFade_1000ms_ease-out] font-[family-name:var(--font-inter)] text-sm leading-6 text-white/65"
+            className="mt-5 max-w-xl animate-[heroFade_1000ms_ease-out] font-(family-name:--font-inter) text-sm leading-6 text-white/65"
           >
             Aprovação e condições sujeitas à análise e decisão da instituição de
             crédito.
@@ -177,7 +177,7 @@ export default function NewHero() {
         </button>
 
         <div
-          className="font-[family-name:var(--font-inter)] text-sm text-white"
+          className="font-(family-name:--font-inter) text-sm text-white"
           aria-live="polite"
           aria-atomic="true"
         >

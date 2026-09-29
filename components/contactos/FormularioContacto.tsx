@@ -1,21 +1,24 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-export default function ServicosCTA() {
-  const router = useRouter();
+export default function FormularioContato() {
   const [form, setForm] = useState({
     nome: "",
-    whatsapp: "+351 ",
     email: "",
+    whatsapp: "+351 ",
     tipo: "Crédito Pessoal",
-    valor: "30000",
-    prazo: "120",
+    mensagem: "",
   });
 
+  const [enviando, setEnviando] = useState(false);
+  const [enviado, setEnviado] = useState(false);
+
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+    >
   ) => {
     const { name, value } = e.target;
 
@@ -50,287 +53,242 @@ export default function ServicosCTA() {
       return;
     }
 
-    if (name === "valor" || name === "renda") {
-      const numeric = value.replace(/\D/g, "");
-
-      setForm(prev => ({
-        ...prev,
-        [name]: numeric,
-      }));
-
-      return;
-    }
-
     setForm(prev => ({
       ...prev,
       [name]: value,
     }));
   };
-  const valor = Number(form.valor || 0);
-  const meses = Number(form.prazo || 120);
-  const valorMinimo = 30000;
-  const valorInvalido = valor > 0 && valor < valorMinimo;
 
-  const jurosMensal = 0.01 / 12;
+  const telefoneValido = /^\+351\s\d{3}\s\d{3}\s\d{3}$/.test(form.whatsapp);
 
-  const prestacao =
-    valor > 0
-      ? (
-          (valor * jurosMensal) /
-          (1 - Math.pow(1 + jurosMensal, -meses))
-        ).toFixed(2)
-      : "0";
-  const totalPago = (Number(prestacao) * meses).toFixed(2);
-
-  const jurosTotal = (Number(totalPago) - valor).toFixed(2);
-  const enviarEmail = async () => {
-    if (valor < 30000) {
-      alert("O valor mínimo para solicitação é de 30.000 €.");
+  const enviarFormulario = async () => {
+    if (!form.nome || !form.email || !telefoneValido) {
+      alert("Preencha o nome, email e um número de WhatsApp válido.");
       return;
     }
-    if (!form.nome || !form.email || !form.whatsapp || !form.valor) {
-      alert("Preencha todos os campos obrigatórios.");
-      return;
-    }
+
+    setEnviando(true);
 
     try {
-      const res = await fetch("/api/lead", {
+      const response = await fetch("/api/leads", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          formType: "pre-analise",
-          data: {
-            ...form,
-            prestacao,
-          },
+          formType: "contacto",
+          data: form,
         }),
       });
 
-      const data = await res.json();
+      const data = await response.json();
 
-      if (data.success) {
-        router.push("/obrigado-contacto");
-
-        setForm({
-          nome: "",
-          email: "",
-          whatsapp: "+351 ",
-          tipo: "Crédito Pessoal",
-          valor: "",
-          prazo: "120",
-        });
-      } else {
-        alert("Erro ao enviar pedido.");
+      if (!response.ok || !data.success) {
+        throw new Error("Erro ao enviar formulário.");
       }
+
+      setEnviado(true);
+
+      setForm({
+        nome: "",
+        email: "",
+        whatsapp: "+351 ",
+        tipo: "Crédito Pessoal",
+        mensagem: "",
+      });
     } catch (error) {
-      alert("Erro ao enviar pedido.");
+      console.error(error);
+      alert("Não foi possível enviar a mensagem. Tente novamente.");
+    } finally {
+      setEnviando(false);
     }
   };
 
   return (
-    <section className="bg-[linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75)),url('/hero.png')] bg-cover bg-bottom py-20 px-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-baseline">
-        {/* TEXTO */}
-        <div className="text-white">
-          <h2 className="text-4xl font-bold mb-6 text-[#c5a059]">
-            Aproveite as soluções de crédito entre 30.000€ e 23.000.000€
-          </h2>
+    <section
+      id="contacto"
+      className="border-t border-[#E2E8EB] bg-[#F7F9FA] px-6 py-20 lg:py-28"
+    >
+      <div className="mx-auto max-w-7xl">
+        <div className="grid gap-14 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <div className="mb-5 flex items-center gap-3">
+              <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-          <p className="text-lg text-white mb-8">
-            Descubra rapidamente quanto você pode conseguir de crédito.
-          </p>
-
-          <div className="flex flex-col gap-2 text-white text-sm">
-            <span>✔ Análise rápida</span>
-            <span>✔ Sem compromisso</span>
-            <span>✔ Atendimento especializado</span>
-          </div>
-        </div>
-
-        {/* FORM */}
-        <div className="bg-white p-8 rounded-2xl shadow-xl">
-          <h3 className="text-2xl font-semibold text-[#1A2B4C]">
-            Simule o seu Crédito
-          </h3>
-
-          <p className="text-gray-500 mb-6">
-            Pedido rápido em menos de 2 minutos
-          </p>
-
-          {/* NOME */}
-          <label htmlFor="nome" className="text-[#1A2B4C]">
-            Insira seu nome
-          </label>
-          <input
-            type="text"
-            name="nome"
-            placeholder="Seu nome"
-            value={form.nome}
-            onChange={handleChange}
-            className="w-full mb-4 border border-[#1A2B4C] rounded-lg p-3 text-[#1A2B4C]"
-          />
-          <label className="text-[#1A2B4C]">Endereço de Email</label>
-
-          <input
-            type="email"
-            name="email"
-            placeholder="exemplo@email.pt"
-            value={form.email}
-            onChange={handleChange}
-            className="w-full mb-4 border border-[#1A2B4C] rounded-lg p-3 text-[#1A2B4C]"
-          />
-          {/* WHATSAPP */}
-          <label htmlFor="nome" className="text-[#1A2B4C]">
-            Insira seu WhatsApp
-          </label>
-          <input
-            type="tel"
-            name="whatsapp"
-            placeholder="+351 912 345 678"
-            value={form.whatsapp}
-            onChange={handleChange}
-            className="w-full mb-4 border border-[#1A2B4C] rounded-lg p-3 text-[#1A2B4C]"
-            pattern="^\+351\s?[0-9]{9}$"
-          />
-
-          {/* TIPO */}
-          <label htmlFor="nome" className="text-[#1A2B4C]">
-            Objetivo de cŕedito
-          </label>
-          <select
-            name="tipo"
-            value={form.tipo}
-            onChange={handleChange}
-            className="w-full mb-4 border border-[#1A2B4C] rounded-lg p-3 text-[#1A2B4C]"
-          >
-            <option>Crédito Pessoal</option>
-            <option>Crédito Empresa</option>
-          </select>
-
-          {/* VALOR */}
-          <label htmlFor="nome" className="text-[#1A2B4C]">
-            Valor pretendido
-          </label>
-          <input
-            type="text"
-            name="valor"
-            placeholder="30.000 €"
-            value={form.valor ? Number(form.valor).toLocaleString("pt-PT") : ""}
-            onChange={handleChange}
-            className={`w-full border rounded-lg p-3 text-[#1A2B4C]
-  ${
-    valorInvalido ? "border-red-500 focus:border-red-500" : "border-[#1A2B4C]"
-  }`}
-          />
-
-          {valorInvalido && (
-            <p className="text-red-500 text-sm mt-2">
-              O valor mínimo para solicitação é de 30.000 €.
-            </p>
-          )}
-
-          {/* PRAZO */}
-          <label className="text-[#1A2B4C]">Prazo de Pagamento</label>
-
-          <div className="mb-6">
-            <input
-              type="range"
-              name="prazo"
-              min={120}
-              max={360}
-              step={12}
-              value={Number(form.prazo)}
-              onChange={handleChange}
-              className="w-full cursor-pointer accent-[#c5a059]"
-            />
-
-            <div className="flex justify-between text-sm text-gray-500 mt-2">
-              <span>120 meses</span>
-              <span>360 meses</span>
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
+                Envie uma mensagem
+              </span>
             </div>
 
-            <div className="mt-4 p-4 bg-gray-100 rounded-lg text-center border">
-              <p className="text-[#1A2B4C] font-semibold">Prazo Selecionado</p>
+            <h2 className="font-(family-name:--font-manrope) text-4xl leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              Como podemos
+              <br />
+              ajudar?
+            </h2>
 
-              <p className="text-2xl font-bold text-[#c5a059]">
-                {form.prazo} meses
+            <p className="mt-6 max-w-md font-(family-name:--font-inter) text-base leading-7 text-[#71808A]">
+              Preencha os seus dados e indique brevemente o motivo do contacto.
+              Entraremos em contacto para esclarecer a sua questão e indicar os
+              próximos passos.
+            </p>
+
+            <div className="mt-10 border-l-2 border-[#69B578] pl-5">
+              <p className="font-(family-name:--font-inter) text-sm leading-6 text-[#71808A]">
+                A apresentação de uma mensagem ou pedido de contacto não
+                constitui aprovação ou garantia de financiamento.
               </p>
+            </div>
+          </div>
 
-              <p className="text-gray-600">({Number(form.prazo) / 12} anos)</p>
+          <div className="border border-[#D9E1E5] bg-white p-7 lg:p-10">
+            {enviado ? (
+              <div className="flex min-h-100 flex-col items-center justify-center text-center">
+                <CheckCircle2
+                  size={48}
+                  strokeWidth={1.5}
+                  className="text-[#147D86]"
+                />
 
-              <hr className="my-4" />
+                <h3 className="mt-6 font-(family-name:--font-manrope) text-2xl  text-[#102A43]">
+                  Mensagem enviada
+                </h3>
 
-              <p className="text-[#1A2B4C] font-semibold">Prestação Estimada</p>
-
-              <p className="text-3xl font-bold text-green-600">
-                {Number(prestacao).toLocaleString("pt-PT", {
-                  style: "currency",
-                  currency: "EUR",
-                })}
-                <span className="text-lg text-gray-500"> / mês</span>
-              </p>
-
-              <div className="mt-4 text-sm text-gray-700 space-y-2">
-                <p>
-                  Valor financiado:
-                  <strong>
-                    {" "}
-                    {valor.toLocaleString("pt-PT", {
-                      style: "currency",
-                      currency: "EUR",
-                    })}
-                  </strong>
-                </p>
-
-                <p>
-                  Total estimado pago:
-                  <strong>
-                    {" "}
-                    {Number(totalPago).toLocaleString("pt-PT", {
-                      style: "currency",
-                      currency: "EUR",
-                    })}
-                  </strong>
-                </p>
-
-                <p>
-                  Juros estimados:
-                  <strong>
-                    {" "}
-                    {Number(jurosTotal).toLocaleString("pt-PT", {
-                      style: "currency",
-                      currency: "EUR",
-                    })}
-                  </strong>
+                <p className="mt-3 max-w-md font-(family-name:--font-inter) text-sm leading-6 text-[#71808A]">
+                  Obrigado pelo contacto. A sua mensagem foi recebida e será
+                  analisada.
                 </p>
               </div>
+            ) : (
+              <div className="space-y-6">
+                <div>
+                  <label
+                    htmlFor="nome"
+                    className="mb-2 block font-(family-name:--font-inter) text-sm font-medium text-[#102A43]"
+                  >
+                    Nome
+                  </label>
 
-              <p className="text-xs text-gray-500 mt-4">
-                Simulação indicativa com taxa de referência de 1% ao ano.
-              </p>
-            </div>
+                  <input
+                    id="nome"
+                    type="text"
+                    name="nome"
+                    value={form.nome}
+                    onChange={handleChange}
+                    placeholder="O seu nome"
+                    className="w-full border border-[#CDD7DC] bg-white px-4 py-3 font-(family-name:--font-inter) text-sm text-[#102A43] outline-none transition focus:border-[#147D86]"
+                  />
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="mb-2 block font-(family-name:--font-inter) text-sm font-medium text-[#102A43]"
+                    >
+                      Email
+                    </label>
+
+                    <input
+                      id="email"
+                      type="email"
+                      name="email"
+                      value={form.email}
+                      onChange={handleChange}
+                      placeholder="exemplo@email.pt"
+                      className="w-full border border-[#CDD7DC] bg-white px-4 py-3 font-(family-name:--font-inter) text-sm text-[#102A43] outline-none transition focus:border-[#147D86]"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="whatsapp"
+                      className="mb-2 block font-(family-name:--font-inter) text-sm font-medium text-[#102A43]"
+                    >
+                      WhatsApp
+                    </label>
+
+                    <input
+                      id="whatsapp"
+                      type="tel"
+                      name="whatsapp"
+                      value={form.whatsapp}
+                      onChange={handleChange}
+                      inputMode="numeric"
+                      placeholder="+351 912 345 678"
+                      className={`w-full border bg-white px-4 py-3 font-(family-name:--font-inter) text-sm text-[#102A43] outline-none transition ${
+                        form.whatsapp !== "+351 " && !telefoneValido
+                          ? "border-red-400 focus:border-red-500"
+                          : "border-[#CDD7DC] focus:border-[#147D86]"
+                      }`}
+                    />
+
+                    {form.whatsapp !== "+351 " && !telefoneValido && (
+                      <p className="mt-2 font-(family-name:--font-inter) text-xs text-red-500">
+                        Introduza os 9 dígitos do número português.
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="tipo"
+                    className="mb-2 block font-(family-name:--font-inter) text-sm font-medium text-[#102A43]"
+                  >
+                    Motivo do contacto
+                  </label>
+
+                  <select
+                    id="tipo"
+                    name="tipo"
+                    value={form.tipo}
+                    onChange={handleChange}
+                    className="w-full border border-[#CDD7DC] bg-white px-4 py-3 font-(family-name:--font-inter) text-sm text-[#102A43] outline-none focus:border-[#147D86]"
+                  >
+                    <option>Crédito Pessoal</option>
+                    <option>Crédito Empresarial</option>
+                    <option>Financiamento</option>
+                    <option>Pedido de informação</option>
+                    <option>Outro assunto</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="mensagem"
+                    className="mb-2 block font-(family-name:--font-inter) text-sm font-medium text-[#102A43]"
+                  >
+                    Mensagem
+                  </label>
+
+                  <textarea
+                    id="mensagem"
+                    name="mensagem"
+                    value={form.mensagem}
+                    onChange={handleChange}
+                    rows={6}
+                    placeholder="Escreva aqui a sua mensagem..."
+                    className="w-full resize-none border border-[#CDD7DC] bg-white px-4 py-3 font-(family-name:--font-inter) text-sm text-[#102A43] outline-none transition focus:border-[#147D86]"
+                  />
+                </div>
+
+                <button
+                  type="button"
+                  onClick={enviarFormulario}
+                  disabled={enviando}
+                  className="inline-flex w-full items-center justify-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72] disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                  {enviando ? "A enviar..." : "Enviar mensagem"}
+                  {!enviando && <ArrowRight size={17} />}
+                </button>
+
+                <p className="text-center font-(family-name:--font-inter) text-xs leading-5 text-[#9AA7AE]">
+                  Os dados enviados serão utilizados para responder ao seu
+                  contacto e tratar do pedido apresentado.
+                </p>
+              </div>
+            )}
           </div>
-
-          {/* BOTÃO */}
-          <button
-            onClick={enviarEmail}
-            disabled={valorInvalido}
-            className={`w-full font-semibold py-4 rounded-lg mt-4 transition
-${
-  valorInvalido
-    ? "bg-gray-300 cursor-not-allowed"
-    : "bg-[#1A2B4C] hover:bg-[#16233f] text-white cursor-pointer"
-}`}
-          >
-            Receber Simulação Gratuita
-          </button>
-
-          <p className="text-xs text-gray-400 mt-4 text-center">
-            Os seus dados são protegidos e usados apenas para análise de
-            crédito.
-          </p>
         </div>
       </div>
     </section>

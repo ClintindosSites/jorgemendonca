@@ -153,14 +153,14 @@ export default function Informativos() {
 
         <div className="max-w-3xl">
           <div className="mb-5 flex items-center gap-3">
-            <span className="h-px w-10 bg-[#BD965A]" />
+            <span className="h-px w-10 bg-[#006f34]" />
 
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#147D86]">
+            <span className="text-sm  uppercase tracking-[0.18em] text-[#147D86]">
               Informativos
             </span>
           </div>
 
-          <h2 className="font-[var(--font-heading)] text-4xl font-semibold leading-[1.05] tracking-[-0.035em] text-[#102A43] sm:text-5xl lg:text-6xl">
+          <h2 className="font-(--font-heading) text-4xl  leading-[1.05] tracking-[-0.035em] text-[#102A43] sm:text-5xl lg:text-6xl">
             Informação financeira
             <br />
             explicada com clareza.
@@ -198,7 +198,7 @@ export default function Informativos() {
                     first:pl-0
                     ${
                       isActive
-                        ? "text-[#BD965A]"
+                        ? "text-[#006f34]"
                         : "text-[#102A43] hover:text-[#147D86]"
                     }
                   `}
@@ -206,7 +206,7 @@ export default function Informativos() {
                   {category}
 
                   {isActive && (
-                    <span className="absolute bottom-[-1px] left-0 right-0 h-[2px] bg-[#BD965A]" />
+                    <span className="absolute -bottom-px left-0 right-0 h-0.5 bg-[#006f34]" />
                   )}
                 </button>
               );
@@ -224,7 +224,7 @@ export default function Informativos() {
           ======================================= */}
 
           <div className="relative overflow-hidden bg-[#102A43]">
-            <div className="relative aspect-[16/10] min-h-[400px]">
+            <div className="relative aspect-16/10 min-h-100">
               <img
                 src={activeItem.image}
                 alt=""
@@ -232,12 +232,12 @@ export default function Informativos() {
               />
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#071B2B] via-[#071B2B]/35 to-transparent" />
+              <div className="absolute inset-0 bg-linear-to-t from-[#071B2B] via-[#071B2B]/35 to-transparent" />
 
               {/* Conteúdo sobre imagem */}
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9 lg:p-11">
                 <div className="mb-4 flex items-center gap-4">
-                  <span className="inline-flex bg-[#BD965A] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white">
+                  <span className="inline-flex bg-[#006f34] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white">
                     {activeItem.category}
                   </span>
 
@@ -246,7 +246,7 @@ export default function Informativos() {
                   </span>
                 </div>
 
-                <h3 className="max-w-3xl font-[var(--font-heading)] text-3xl font-medium leading-[1.08] tracking-[-0.025em] text-white sm:text-4xl lg:text-5xl">
+                <h3 className="max-w-3xl font-(--font-heading) text-3xl leading-[1.08] tracking-[-0.025em] text-white sm:text-4xl lg:text-5xl">
                   {activeItem.title}
                 </h3>
 
@@ -256,7 +256,7 @@ export default function Informativos() {
 
                 <a
                   href={activeItem.href}
-                  className="mt-7 inline-flex items-center gap-3 text-sm font-semibold text-white transition-colors hover:text-[#BD965A]"
+                  className="mt-7 inline-flex items-center gap-3 text-sm  text-white transition-colors hover:text-[#006f34]"
                 >
                   Ler mais
                   <ArrowRight size={17} />
@@ -271,7 +271,7 @@ export default function Informativos() {
 
           <div className="border-x border-b border-[#D9E1E5] lg:border-b-0">
             <div className="flex items-center justify-between border-b border-[#D9E1E5] px-6 py-5 sm:px-7">
-              <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#147D86]">
+              <span className="text-xs  uppercase tracking-[0.16em] text-[#147D86]">
                 Mais informativos
               </span>
 
@@ -308,7 +308,7 @@ export default function Informativos() {
                     className="group block w-full border-b border-[#D9E1E5] px-6 py-6 text-left transition-colors hover:bg-[#F5F8F9] sm:px-7"
                   >
                     <div className="flex items-center justify-between gap-4">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#BD965A]">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.14em] text-[#006f34]">
                         {item.category}
                       </span>
 
@@ -317,7 +317,7 @@ export default function Informativos() {
                       </span>
                     </div>
 
-                    <h4 className="mt-3 font-[var(--font-heading)] text-base font-semibold leading-[1.3] text-[#102A43] transition-colors group-hover:text-[#147D86] sm:text-lg">
+                    <h4 className="mt-3 font-(--font-heading) text-base  leading-[1.3] text-[#102A43] transition-colors group-hover:text-[#147D86] sm:text-lg">
                       {item.title}
                     </h4>
 
@@ -337,7 +337,7 @@ export default function Informativos() {
             <div className="px-6 py-5 sm:px-7">
               <a
                 href="/informativos"
-                className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#102A43] transition-colors hover:text-[#147D86]"
+                className="inline-flex items-center gap-2 text-xs  uppercase tracking-[0.12em] text-[#102A43] transition-colors hover:text-[#147D86]"
               >
                 Ver todos os informativos
                 <ExternalLink size={14} />
@@ -352,7 +352,7 @@ export default function Informativos() {
 
         <div className="mt-7 flex flex-col gap-5 border-t border-[#D9E1E5] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-xs font-semibold text-[#102A43]">
+            <span className="text-xs  text-[#102A43]">
               {String(currentIndex + 1).padStart(2, "0")}
             </span>
 

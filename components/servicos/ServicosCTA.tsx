@@ -611,12 +611,12 @@ export default function ServicosCTA() {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#BD965A]" />
 
-              <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[#BD965A]">
+              <span className="text-sm  uppercase tracking-[0.18em] text-[#BD965A]">
                 Apresentar pedido
               </span>
             </div>
 
-            <h2 className="max-w-2xl text-4xl font-semibold leading-[1.06] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+            <h2 className="max-w-2xl text-4xl  leading-[1.06] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
               Um primeiro passo
               <br />
               para o seu pedido.
@@ -636,14 +636,12 @@ export default function ServicosCTA() {
               {/* 01 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs font-semibold text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
                   01
                 </div>
 
                 <div>
-                  <h3 className="text-base font-semibold">
-                    Apresente o pedido
-                  </h3>
+                  <h3 className="text-base ">Apresente o pedido</h3>
 
                   <p className="mt-1 text-sm leading-6 text-white/55">
                     Indique o valor pretendido, a finalidade e os seus dados de
@@ -655,14 +653,12 @@ export default function ServicosCTA() {
               {/* 02 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs font-semibold text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
                   02
                 </div>
 
                 <div>
-                  <h3 className="text-base font-semibold">
-                    Contacto e esclarecimento
-                  </h3>
+                  <h3 className="text-base ">Contacto e esclarecimento</h3>
 
                   <p className="mt-1 text-sm leading-6 text-white/55">
                     Entraremos em contacto para compreender o pedido e
@@ -674,12 +670,12 @@ export default function ServicosCTA() {
               {/* 03 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs font-semibold text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
                   03
                 </div>
 
                 <div>
-                  <h3 className="text-base font-semibold">
+                  <h3 className="text-base ">
                     Condições por escrito e decisão
                   </h3>
 
@@ -723,7 +719,7 @@ export default function ServicosCTA() {
             ================================================= */}
 
             <div className="border-b border-[#D9E1E5] pb-6">
-              <h3 className="text-2xl font-semibold tracking-[-0.02em] text-[#102A43] sm:text-3xl">
+              <h3 className="text-2xl  tracking-[-0.02em] text-[#102A43] sm:text-3xl">
                 Apresente o seu pedido
               </h3>
 
@@ -752,7 +748,7 @@ export default function ServicosCTA() {
                       Montante selecionado
                     </p>
 
-                    <p className="mt-1 text-3xl font-semibold tracking-[-0.03em] text-[#102A43]">
+                    <p className="mt-1 text-3xl  tracking-[-0.03em] text-[#102A43]">
                       {formatarValor(form.valor)}
                     </p>
                   </div>
@@ -974,7 +970,7 @@ export default function ServicosCTA() {
                 aria-disabled={!podeEnviar || enviando}
                 className={`
                   group flex w-full items-center justify-center gap-3
-                  px-6 py-4 text-sm font-semibold
+                  px-6 py-4 text-sm 
                   transition-all
                   ${
                     !podeEnviar || enviando

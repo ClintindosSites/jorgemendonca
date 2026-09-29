@@ -38,12 +38,12 @@ export default function NossaHistoria() {
             <div className="mb-5 flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                 Quem somos
               </span>
             </div>
 
-            <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] text-[#006f34] md:text-5xl">
+            <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] text-[#006f34] md:text-5xl">
               Jorge Mendonça
             </h2>
 
@@ -71,7 +71,7 @@ export default function NossaHistoria() {
 
             <div className="mt-10 grid gap-4 sm:grid-cols-2">
               <div className="border-l-2 border-[#006f34] bg-[#F7F9FA] p-5">
-                <h3 className="font-(family-name:--font-manrope) text-base font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-base  text-[#102A43]">
                   Acompanhamento pessoal
                 </h3>
 
@@ -82,7 +82,7 @@ export default function NossaHistoria() {
               </div>
 
               <div className="border-l-2 border-[#006f34] bg-[#F7F9FA] p-5">
-                <h3 className="font-(family-name:--font-manrope) text-base font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-base  text-[#102A43]">
                   Informação clara
                 </h3>
 
@@ -106,12 +106,12 @@ export default function NossaHistoria() {
             <div className="mb-5 flex items-center gap-3">
               <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                 Atividade
               </span>
             </div>
 
-            <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
+            <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
               O que fazemos
             </h2>
 
@@ -130,11 +130,11 @@ export default function NossaHistoria() {
                 <Target size={21} strokeWidth={1.5} />
               </div>
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold tracking-[0.12em] text-[#9AA7AE]">
+              <span className="font-(family-name:--font-inter) text-xs  tracking-[0.12em] text-[#9AA7AE]">
                 01
               </span>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl  text-[#102A43]">
                 Compreender o pedido
               </h3>
 
@@ -151,11 +151,11 @@ export default function NossaHistoria() {
                 <Users size={21} strokeWidth={1.5} />
               </div>
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold tracking-[0.12em] text-[#9AA7AE]">
+              <span className="font-(family-name:--font-inter) text-xs  tracking-[0.12em] text-[#9AA7AE]">
                 02
               </span>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl  text-[#102A43]">
                 Acompanhar o processo
               </h3>
 
@@ -172,11 +172,11 @@ export default function NossaHistoria() {
                 <Heart size={21} strokeWidth={1.5} />
               </div>
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold tracking-[0.12em] text-[#9AA7AE]">
+              <span className="font-(family-name:--font-inter) text-xs  tracking-[0.12em] text-[#9AA7AE]">
                 03
               </span>
 
-              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl font-semibold text-[#102A43]">
+              <h3 className="mt-3 font-(family-name:--font-manrope) text-xl  text-[#102A43]">
                 Esclarecer as condições
               </h3>
 
@@ -201,12 +201,12 @@ export default function NossaHistoria() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
                   Princípios
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] text-[#102A43] md:text-5xl">
                 Uma forma de trabalhar baseada na proximidade.
               </h2>
             </div>
@@ -217,7 +217,7 @@ export default function NossaHistoria() {
                   <Check size={18} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                   Transparência
                 </h3>
 
@@ -232,7 +232,7 @@ export default function NossaHistoria() {
                   <Check size={18} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                   Proximidade
                 </h3>
 
@@ -247,7 +247,7 @@ export default function NossaHistoria() {
                   <Check size={18} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                   Rigor
                 </h3>
 
@@ -262,7 +262,7 @@ export default function NossaHistoria() {
                   <Check size={18} strokeWidth={1.8} />
                 </div>
 
-                <h3 className="font-(family-name:--font-manrope) text-lg font-semibold text-[#102A43]">
+                <h3 className="font-(family-name:--font-manrope) text-lg  text-[#102A43]">
                   Responsabilidade
                 </h3>
 
@@ -289,12 +289,12 @@ export default function NossaHistoria() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
                   Enquadramento institucional
                 </span>
               </div>
 
-              <h2 className="font-(family-name:--font-manrope) text-4xl font-semibold leading-tight tracking-[-0.03em] md:text-5xl">
+              <h2 className="font-(family-name:--font-manrope) text-4xl  leading-tight tracking-[-0.03em] md:text-5xl">
                 Uma atividade enquadrada numa relação institucional.
               </h2>
 
@@ -309,7 +309,7 @@ export default function NossaHistoria() {
             {/* LADO DIREITO */}
 
             <div>
-              <div className="border border-white/15 bg-white/[0.04] p-8 lg:p-10">
+              <div className="border border-white/15 bg-white/4 p-8 lg:p-10">
                 {/* IDENTIDADE INSTITUCIONAL */}
 
                 <div className="flex items-center gap-5">
@@ -320,11 +320,11 @@ export default function NossaHistoria() {
                   </div>
 
                   <div>
-                    <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-[#69B578]">
+                    <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-[#69B578]">
                       Instituição
                     </p>
 
-                    <h3 className="mt-1 font-(family-name:--font-manrope) text-xl font-semibold">
+                    <h3 className="mt-1 font-(family-name:--font-manrope) text-xl ">
                       Banca Centropadana
                     </h3>
 
@@ -337,7 +337,7 @@ export default function NossaHistoria() {
                 {/* GRUPO */}
 
                 <div className="mt-8 border-t border-white/10 pt-7">
-                  <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+                  <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-white/40">
                     Grupo
                   </p>
 
@@ -358,7 +358,7 @@ export default function NossaHistoria() {
                     href="https://www.gruppobcciccrea.it/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border border-white/20 px-5 py-3 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-white hover:text-[#102A43]"
+                    className="inline-flex items-center justify-center gap-2 border border-white/20 px-5 py-3 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-white hover:text-[#102A43]"
                   >
                     Grupo BCC Iccrea
                     <ArrowRight size={16} />
@@ -368,7 +368,7 @@ export default function NossaHistoria() {
                     href="https://www.bancacentropadana.it/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 border border-[#006f34] px-5 py-3 font-(family-name:--font-inter) text-sm font-semibold text-[#69B578] transition-colors hover:bg-[#006f34] hover:text-white"
+                    className="inline-flex items-center justify-center gap-2 border border-[#006f34] px-5 py-3 font-(family-name:--font-inter) text-sm  text-[#69B578] transition-colors hover:bg-[#006f34] hover:text-white"
                   >
                     Banca Centropadana
                     <ArrowRight size={16} />
@@ -382,7 +382,7 @@ export default function NossaHistoria() {
 
           <div className="mt-14 grid gap-6 border-t border-white/10 pt-8 md:grid-cols-2">
             <div>
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-white/40">
                 Importante
               </p>
 
@@ -394,7 +394,7 @@ export default function NossaHistoria() {
             </div>
 
             <div>
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.14em] text-white/40">
+              <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.14em] text-white/40">
                 Decisão de crédito
               </p>
 
@@ -415,11 +415,11 @@ export default function NossaHistoria() {
       <section className="bg-white px-6 py-20 lg:py-24">
         <div className="mx-auto max-w-5xl border border-[#D9E1E5] bg-[#F7F9FA] px-7 py-12 text-center sm:px-12 lg:px-16">
           <div className="mx-auto max-w-3xl">
-            <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
               Próximo passo
             </span>
 
-            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl font-semibold tracking-[-0.03em] text-[#102A43] md:text-4xl">
+            <h2 className="mt-4 font-(family-name:--font-manrope) text-3xl  tracking-[-0.03em] text-[#102A43] md:text-4xl">
               Pretende apresentar um pedido?
             </h2>
 
@@ -432,7 +432,7 @@ export default function NossaHistoria() {
             <div className="mt-8">
               <Link
                 href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />

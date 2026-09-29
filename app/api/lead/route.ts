@@ -296,6 +296,80 @@ export async function POST(req: Request) {
       return Response.json({ success: true });
     }
 
+    if (formType === "contactos") {
+      const subject = "Novo Contacto pelo Site";
+
+      const html = `
+    <div style="font-family:Arial;max-width:700px;margin:auto">
+
+      <h2 style="color:#1A2B4C;">
+        Novo Contacto pelo Site
+      </h2>
+
+      <hr/>
+
+      <table style="width:100%;border-collapse:collapse">
+
+        <tr>
+          <td style="padding:10px;border:1px solid #ddd;">
+            <b>Nome</b>
+          </td>
+          <td style="padding:10px;border:1px solid #ddd;">
+            ${data?.nome || "-"}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;border:1px solid #ddd;">
+            <b>Email</b>
+          </td>
+          <td style="padding:10px;border:1px solid #ddd;">
+            ${data?.email || "-"}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;border:1px solid #ddd;">
+            <b>WhatsApp</b>
+          </td>
+          <td style="padding:10px;border:1px solid #ddd;">
+            ${data?.whatsapp || "-"}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="padding:10px;border:1px solid #ddd;">
+            <b>Motivo</b>
+          </td>
+          <td style="padding:10px;border:1px solid #ddd;">
+            ${data?.tipo || "-"}
+          </td>
+        </tr>
+
+      </table>
+
+      <h3 style="color:#C5A059;margin-top:30px;">
+        Mensagem
+      </h3>
+
+      <div style="padding:15px;border:1px solid #ddd;">
+        ${data?.mensagem || "Não foi apresentada nenhuma mensagem."}
+      </div>
+
+    </div>
+    
+  `;
+      await resend.emails.send({
+        from: EMAIL_FROM,
+        to: EMAIL_DESTINO,
+        subject,
+        html,
+        replyTo: data?.email || undefined,
+      });
+
+      return Response.json({ success: true });
+    }
+
     /*
     ============================================================
     FORMULÁRIO HERO

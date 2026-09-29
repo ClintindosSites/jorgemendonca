@@ -1,130 +1,142 @@
-"use client";
+import { Clock, Mail, MapPin, MessageCircle } from "lucide-react";
 
-import { Mail, Clock } from "lucide-react";
-import Image from "next/image";
+const contactos = [
+  {
+    icon: Mail,
+    titulo: "Email",
+    valor: "intermediario@jorgemendonca.com",
+    href: "mailto:intermediario@jorgemendonca.com",
+  },
+  {
+    icon: MessageCircle,
+    titulo: "WhatsApp",
+    valor: "+351 965 710 640",
+    href: "https://wa.me/351965710640?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20atendimento.",
+  },
+  {
+    icon: Clock,
+    titulo: "Horário de atendimento",
+    valor: "Segunda a sexta · 09:00 – 18:00",
+    href: null,
+  },
+  {
+    icon: MapPin,
+    titulo: "Localização",
+    valor: "Ilha de São Jorge, Açores",
+    href: null,
+  },
+];
 
-export default function Contactos() {
+export default function ContactInfoCards() {
   return (
-    <section className="py-24 px-1 md:px-6 bg-gray-50 overflow-hidden">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 px-4">
-        {/* COLUNA ESQUERDA */}
+    <section className="bg-white px-6 py-20 lg:py-24">
+      <div className="mx-auto max-w-7xl">
+        <div className="max-w-3xl">
+          <div className="mb-5 flex items-center gap-3">
+            <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-        <div className="space-y-8">
-          {/* INFO CONTACTO */}
-          <div
-            className="
-bg-white
-rounded-3xl
-shadow-xl
-p-3
-md:p-8
-w-full
-max-w-full
-overflow-hidden
-"
-          >
-            <h2 className="text-2xl font-bold text-[#1A2B4C] mb-6">
-              Informações de Contacto
-            </h2>
-
-            <div className="space-y-4">
-              {/* EMAIL */}
-              <a
-                href="mailto:jorgemiguel26@sapo.pt"
-                className="flex items-start gap-4 p-1 rounded-xl hover:bg-gray-100 transition cursor-pointer"
-              >
-                <div className="bg-[#1A2B4C] text-[#C5A059] p-3 rounded-lg">
-                  <Mail size={20} />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-[#1A2B4C]">Email</p>
-                  <p className="text-gray-600 text-[1rem]">
-                    intermediario@jorgemendonca.com
-                  </p>
-                </div>
-              </a>
-
-              <a
-                href="https://wa.me/351965710640?text=Olá,%20gostaria%20de%20marcar%20um%20atendimento."
-                target="_blank"
-                className="flex items-start gap-4 p-1 rounded-xl hover:bg-gray-100 transition cursor-pointer"
-              >
-                <div className="bg-[#1A2B4C] text-[#C5A059] p-3 rounded-lg">
-                  <Clock size={20} />
-                </div>
-
-                <div>
-                  <p className="font-semibold text-[#1A2B4C]">
-                    Horário de Atendimento
-                  </p>
-
-                  <p className="text-gray-600">
-                    Segunda a Sexta: 09:00 - 18:00 <br />
-                    Sábados: Mediante marcação
-                  </p>
-                </div>
-              </a>
-            </div>
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
+              Contacte-nos
+            </span>
           </div>
 
-          {/* INFO LEGAL */}
+          <h2 className="font-(family-name:--font-manrope) text-4xl tracking-[-0.03em] text-[#102A43] md:text-5xl">
+            Estamos disponíveis para ajudar.
+          </h2>
 
-          <div className="bg-[#1A2B4C] text-white p-8 rounded-2xl">
-            <h3 className="text-xl font-semibold mb-4">
-              <strong className="text-[#c5a059]">
-                Informação Institucional
-              </strong>
-            </h3>
-
-            <div className="text-sm text-gray-200 space-y-2">
-              {/*
-                <p>EUROBRIDGE</p>
-
-              <p>Serviços de Cŕedito Internacional Ltda.</p>
-
-              <p>
-                CNPJ:{" "}
-                <strong className="text-[#c5a059] uppercase">
-                  65.559.910/0001-88
-                </strong>
-              </p>
-      */}
-
-              <p>
-                {" "}
-                <strong className="text-[#c5a059] uppercase">
-                  Jorge Mendonça
-                </strong>
-                <br /> Responsável e Diretor Executivo
-              </p>
-            </div>
-          </div>
+          <p className="mt-5 max-w-2xl font-(family-name:--font-inter) text-base leading-7 text-[#71808A]">
+            Escolha a forma de contacto que lhe for mais conveniente. O primeiro
+            contacto permite-nos compreender melhor a sua necessidade e
+            esclarecer as próximas etapas.
+          </p>
         </div>
 
-        {/* COLUNA DIREITA */}
+        <div className="mt-12 grid gap-px overflow-hidden border border-[#D9E1E5] bg-[#D9E1E5] sm:grid-cols-2 lg:grid-cols-4">
+          {contactos.map(contacto => {
+            const Icon = contacto.icon;
 
-        <div className="space-y-8">
-          {/* MAPA */}
+            const content = (
+              <>
+                <div className="flex h-11 w-11 items-center justify-center bg-[#102A43] text-[#69B578]">
+                  <Icon size={20} strokeWidth={1.5} />
+                </div>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border">
-            <div className="rounded-xl overflow-hidden">
-              <Image src="/logo.png" width={500} height={200} alt="" />
+                <h3 className="mt-7 font-(family-name:--font-manrope) text-lg  text-[#102A43]">
+                  {contacto.titulo}
+                </h3>
+
+                <p className="mt-3 font-(family-name:--font-inter) text-sm leading-6 text-[#71808A]">
+                  {contacto.valor}
+                </p>
+              </>
+            );
+
+            if (contacto.href) {
+              return (
+                <a
+                  key={contacto.titulo}
+                  href={contacto.href}
+                  target={
+                    contacto.href.startsWith("http") ? "_blank" : undefined
+                  }
+                  rel={
+                    contacto.href.startsWith("http")
+                      ? "noopener noreferrer"
+                      : undefined
+                  }
+                  className="bg-white p-7 transition-colors hover:bg-[#FCFDFC] lg:p-8"
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <div key={contacto.titulo} className="bg-white p-7 lg:p-8">
+                {content}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_0.8fr]">
+          <div className="border border-[#D9E1E5] bg-[#F7F9FA] p-8 lg:p-10">
+            <div className="flex items-start gap-5">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <MapPin size={20} strokeWidth={1.5} />
+              </div>
+
+              <div>
+                <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.16em] text-[#006f34]">
+                  Atendimento presencial
+                </p>
+
+                <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl text-[#102A43]">
+                  Ilha de São Jorge
+                </h3>
+
+                <p className="mt-3 max-w-xl font-(family-name:--font-inter) text-sm leading-7 text-[#71808A]">
+                  O atendimento presencial está disponível mediante marcação
+                  prévia. Para maior comodidade, também é possível realizar o
+                  contacto e acompanhamento à distância.
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* COMO ENCONTRAR */}
+          <div className="bg-[#102A43] p-8 text-white lg:p-10">
+            <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.16em] text-[#69B578]">
+              Atendimento
+            </p>
 
-          <div className="bg-white p-6 rounded-2xl shadow-sm border">
-            <h3 className="text-xl font-semibold text-[#1A2B4C] mb-3">
-              Como nos encontrar
+            <h3 className="mt-3 font-(family-name:--font-manrope) text-2xl ">
+              Segunda a sexta
             </h3>
 
-            <p className="text-gray-600 text-sm leading-relaxed">
-              Situados na encantadora Ilha de São Jorge, nos Açores, estamos
-              disponíveis para atendimento presencial mediante marcação prévia.
-              Para maior comodidade, também oferecemos consultas à distância
-              através de videochamada.
+            <p className="mt-3 font-(family-name:--font-inter) text-sm leading-7 text-white/60">
+              Das 09:00 às 18:00.
+              <br />
+              Sábados mediante marcação.
             </p>
           </div>
         </div>
