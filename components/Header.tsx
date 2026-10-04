@@ -46,7 +46,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+          <nav className="hidden md:flex items-center gap-4 text-gray-700 font-medium">
             <Link href="/" className="hover:text-[#006f34] hover:font-bold">
               Início
             </Link>
