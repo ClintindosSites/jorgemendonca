@@ -82,7 +82,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Link
               href="/simulacao"
-              className="bg-[#006f34] hover:bg-[#b08f4d] text-white font-semibold px-6 py-3 rounded-lg transition"
+              className="bg-[#006f34] hover:bg-[#0caf58] text-white font-semibold px-6 py-3 rounded-lg transition"
             >
               Apresentar pedido
             </Link>

@@ -37,8 +37,6 @@ const categorias = [
   },
 ];
 
-const getImagemArtigo = (slug: string) => `/images/informativos/${slug}.webp`;
-
 export default function Informativos() {
   /*
    * O primeiro artigo funciona como destaque.
@@ -126,9 +124,7 @@ export default function Informativos() {
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 hover:scale-105"
                   style={{
-                    backgroundImage: `url("${getImagemArtigo(
-                      artigoDestaque.slug
-                    )}")`,
+                    backgroundImage: `url("${artigoDestaque.imagem}")`,
                   }}
                 />
 
@@ -304,12 +300,12 @@ export default function Informativos() {
 
                 <Link
                   href={`/informativos/${artigo.slug}`}
-                  className="relative block aspect-[16/9] overflow-hidden bg-[#102A43]"
+                  className="relative block aspect-video overflow-hidden bg-[#102A43]"
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                     style={{
-                      backgroundImage: `url("${getImagemArtigo(artigo.slug)}")`,
+                      backgroundImage: `url("${artigo.imagem}")`,
                     }}
                   />
 
@@ -427,7 +423,7 @@ export default function Informativos() {
             <div className="mt-8">
               <Link
                 href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                className="inline-flex items-center gap-3 bg-[#006f34] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#0caf58]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />

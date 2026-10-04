@@ -116,12 +116,12 @@ export default function ComoFunciona() {
         </div>
 
         {/* Nota de transparência */}
-        <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-[#CBD8DE] bg-[#102A43] p-6 sm:flex-row sm:items-start sm:p-7">
+        <div className="mt-10 flex flex-col gap-5 rounded-2xl border border-[#CBD8DE] bg-[#006d34] p-6 sm:flex-row sm:items-start sm:p-7">
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white/10">
             <ShieldCheck
               size={22}
               strokeWidth={1.7}
-              className="text-[#006f34]"
+              className="text-[#ffffff]"
             />
           </div>
 
@@ -152,7 +152,7 @@ export default function ComoFunciona() {
 
           <a
             href="/apresentar-pedido"
-            className="group inline-flex items-center gap-3 rounded-full bg-[#147D86] px-6 py-3.5 text-sm  text-white transition-colors hover:bg-[#0F6971]"
+            className="group inline-flex items-center gap-3 rounded-full bg-[#006d34] px-6 py-3.5 text-sm  text-white transition-colors hover:bg-[#0caf58]]"
           >
             Apresentar pedido
             <ArrowRight

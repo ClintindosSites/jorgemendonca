@@ -96,7 +96,7 @@ export default function Credibilidade() {
                   href={""}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md bg-[#102A43] px-5 py-3 font-(family-name:--font-inter) text-sm  text-white transition hover:bg-[#183b59]"
+                  className="inline-flex items-center rounded-md bg-[#006f34] px-5 py-3 font-(family-name:--font-inter) text-sm  text-white transition hover:bg-[#0caf58]"
                 >
                   Conhecer a instituição
                 </a>
@@ -105,7 +105,7 @@ export default function Credibilidade() {
                   href={""}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-md border border-[#CBD7DD] px-5 py-3 font-(family-name:--font-inter) text-sm  text-[#102A43] transition hover:border-[#147D86] hover:text-[#147D86]"
+                  className="inline-flex items-center rounded-md border border-[#CBD7DD] px-5 py-3 font-(family-name:--font-inter) text-sm  text-[#102A43] transition hover:border-[#006f34] hover:text-[#006f34]"
                 >
                   Consultar registo no Banco de Portugal
                 </a>

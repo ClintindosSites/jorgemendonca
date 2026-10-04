@@ -43,6 +43,13 @@ export default async function InformativoPage({ params }: PageProps) {
   const relacionados = informativos
     .filter(item => item.slug !== informativo.slug)
     .slice(0, 3);
+  const phone = "553135828296";
+
+  const message = encodeURIComponent(
+    "Olá! Gostaria de pedir uma simulação de crédito."
+  );
+
+  const link = `https://wa.me/${phone}?text=${message}`;
 
   return (
     <>
@@ -219,7 +226,7 @@ export default async function InformativoPage({ params }: PageProps) {
               <div className="mt-8 border-t border-[#D9E1E5] pt-7">
                 <Link
                   href="/apresentar-pedido"
-                  className="inline-flex w-full items-center justify-center gap-2 bg-[#147D86] px-5 py-3.5 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                  className="inline-flex w-full items-center justify-center gap-2 bg-[#006f34] px-5 py-3.5 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#0caf58]"
                 >
                   Apresentar pedido
                   <ArrowRight size={16} />
@@ -305,8 +312,9 @@ export default async function InformativoPage({ params }: PageProps) {
 
             <div className="mt-8">
               <Link
-                href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#106A72]"
+                href={link}
+                target="_blank"
+                className="inline-flex items-center gap-3 bg-[#006f34] px-7 py-4 font-(family-name:--font-inter) text-sm font-semibold text-white transition-colors hover:bg-[#0caf58]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />

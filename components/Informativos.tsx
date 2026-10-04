@@ -1,7 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+
+import { informativos } from "@/data/informativo";
 
 type Category =
   | "Destaque"
@@ -9,8 +12,9 @@ type Category =
   | "Financiamento"
   | "Literacia financeira";
 
-type Informativo = {
+type InformativoView = {
   id: number;
+  slug: string;
   category: Category;
   date: string;
   title: string;
@@ -19,68 +23,22 @@ type Informativo = {
   href: string;
 };
 
-const informativos: Informativo[] = [
-  {
-    id: 1,
-    category: "Destaque",
-    date: "24.09.2026",
-    title: "Como preparar o seu pedido de crédito",
-    excerpt:
-      "Conheça os principais elementos que deve considerar antes de apresentar um pedido de financiamento.",
-    image: "/informativos/credito-01.webp",
-    href: "/informativos/como-preparar-pedido-credito",
-  },
-  {
-    id: 2,
-    category: "Crédito",
-    date: "18.09.2026",
-    title: "Que informações deve comparar numa proposta?",
-    excerpt:
-      "Compreenda as principais informações que devem ser analisadas antes de avançar com uma proposta de financiamento.",
-    image: "/informativos/credito-02.webp",
-    href: "/informativos/comparar-proposta",
-  },
-  {
-    id: 3,
-    category: "Literacia financeira",
-    date: "12.09.2026",
-    title: "O que significam TAN, TAEG e MTIC?",
-    excerpt:
-      "Entenda o significado destes conceitos e a informação que representam numa proposta de financiamento.",
-    image: "/informativos/credito-03.webp",
-    href: "/informativos/tan-taeg-mtic",
-  },
-  {
-    id: 4,
-    category: "Financiamento",
-    date: "05.09.2026",
-    title: "O que deve saber antes de apresentar um pedido?",
-    excerpt:
-      "Alguns pontos importantes para compreender o processo de financiamento antes de apresentar o seu pedido.",
-    image: "/informativos/credito-04.webp",
-    href: "/informativos/antes-de-apresentar-pedido",
-  },
-  {
-    id: 5,
-    category: "Crédito",
-    date: "29.08.2026",
-    title: "Documentação: o que pode ser necessário?",
-    excerpt:
-      "A documentação necessária pode variar de acordo com o pedido e com os critérios da instituição responsável.",
-    image: "/informativos/credito-05.webp",
-    href: "/informativos/documentacao-credito",
-  },
-  {
-    id: 6,
-    category: "Financiamento",
-    date: "22.08.2026",
-    title: "Como compreender as condições apresentadas?",
-    excerpt:
-      "Uma leitura cuidada das condições apresentadas ajuda a compreender melhor uma proposta de financiamento.",
-    image: "/informativos/credito-06.webp",
-    href: "/informativos/compreender-condicoes",
-  },
-];
+const categoryMap: Record<string, Category> = {
+  Crédito: "Crédito",
+  Financiamento: "Financiamento",
+  "Literacia financeira": "Literacia financeira",
+};
+
+const informativosView: InformativoView[] = informativos.map((item, index) => ({
+  id: index + 1,
+  slug: item.slug,
+  category: categoryMap[item.categoria] ?? ("Crédito" as Category),
+  date: item.data,
+  title: item.titulo,
+  excerpt: item.resumo,
+  image: item.imagem,
+  href: `/informativos/${item.slug}`,
+}));
 
 const categories: Category[] = [
   "Destaque",
@@ -96,10 +54,10 @@ export default function Informativos() {
 
   const filteredItems = useMemo(() => {
     if (activeCategory === "Destaque") {
-      return informativos;
+      return informativosView;
     }
 
-    return informativos.filter(item => item.category === activeCategory);
+    return informativosView.filter(item => item.category === activeCategory);
   }, [activeCategory]);
 
   const activeItem =
@@ -114,8 +72,8 @@ export default function Informativos() {
 
     const firstItem =
       category === "Destaque"
-        ? informativos[0]
-        : informativos.find(item => item.category === category);
+        ? informativosView[0]
+        : informativosView.find(item => item.category === category);
 
     if (firstItem) {
       setActiveId(firstItem.id);
@@ -155,12 +113,12 @@ export default function Informativos() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#006f34]" />
 
-            <span className="text-sm  uppercase tracking-[0.18em] text-[#147D86]">
+            <span className="text-sm uppercase tracking-[0.18em] text-[#147D86]">
               Informativos
             </span>
           </div>
 
-          <h2 className="font-(--font-heading) text-4xl  leading-[1.05] tracking-[-0.035em] text-[#102A43] sm:text-5xl lg:text-6xl">
+          <h2 className="font-(--font-heading) text-4xl leading-[1.05] tracking-[-0.035em] text-[#102A43] sm:text-5xl lg:text-6xl">
             Informação financeira
             <br />
             explicada com clareza.
@@ -223,18 +181,20 @@ export default function Informativos() {
               DESTAQUE
           ======================================= */}
 
-          <div className="relative overflow-hidden bg-[#102A43]">
+          <div className="relative overflow-hidden bg-[#006f34]">
             <div className="relative aspect-16/10 min-h-100">
               <img
                 src={activeItem.image}
-                alt=""
+                alt={activeItem.title}
                 className="absolute inset-0 h-full w-full object-cover"
               />
 
               {/* Overlay */}
+
               <div className="absolute inset-0 bg-linear-to-t from-[#071B2B] via-[#071B2B]/35 to-transparent" />
 
               {/* Conteúdo sobre imagem */}
+
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-9 lg:p-11">
                 <div className="mb-4 flex items-center gap-4">
                   <span className="inline-flex bg-[#006f34] px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-white">
@@ -254,13 +214,13 @@ export default function Informativos() {
                   {activeItem.excerpt}
                 </p>
 
-                <a
+                <Link
                   href={activeItem.href}
-                  className="mt-7 inline-flex items-center gap-3 text-sm  text-white transition-colors hover:text-[#006f34]"
+                  className="mt-7 inline-flex items-center gap-3 text-sm text-white transition-colors hover:text-[#006f34]"
                 >
                   Ler mais
                   <ArrowRight size={17} />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -271,7 +231,7 @@ export default function Informativos() {
 
           <div className="border-x border-b border-[#D9E1E5] lg:border-b-0">
             <div className="flex items-center justify-between border-b border-[#D9E1E5] px-6 py-5 sm:px-7">
-              <span className="text-xs  uppercase tracking-[0.16em] text-[#147D86]">
+              <span className="text-xs uppercase tracking-[0.16em] text-[#147D86]">
                 Mais informativos
               </span>
 
@@ -317,7 +277,7 @@ export default function Informativos() {
                       </span>
                     </div>
 
-                    <h4 className="mt-3 font-(--font-heading) text-base  leading-[1.3] text-[#102A43] transition-colors group-hover:text-[#147D86] sm:text-lg">
+                    <h4 className="mt-3 font-(--font-heading) text-base leading-[1.3] text-[#102A43] transition-colors group-hover:text-[#147D86] sm:text-lg">
                       {item.title}
                     </h4>
 
@@ -334,14 +294,15 @@ export default function Informativos() {
             </div>
 
             {/* Rodapé lateral */}
+
             <div className="px-6 py-5 sm:px-7">
-              <a
+              <Link
                 href="/informativos"
-                className="inline-flex items-center gap-2 text-xs  uppercase tracking-[0.12em] text-[#102A43] transition-colors hover:text-[#147D86]"
+                className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.12em] text-[#102A43] transition-colors hover:text-[#147D86]"
               >
                 Ver todos os informativos
                 <ExternalLink size={14} />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -352,7 +313,7 @@ export default function Informativos() {
 
         <div className="mt-7 flex flex-col gap-5 border-t border-[#D9E1E5] pt-6 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex items-center gap-3">
-            <span className="text-xs  text-[#102A43]">
+            <span className="text-xs text-[#102A43]">
               {String(currentIndex + 1).padStart(2, "0")}
             </span>
 

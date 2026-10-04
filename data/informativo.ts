@@ -345,11 +345,11 @@ export const informativos: Informativo[] = [
     data: "4 outubro 2026",
     tempoLeitura: "6 min",
 
-    imagem: "/images/informativos/central-responsabilidades-credito.webp",
+    imagem: "/images/informativos/central-de-responsabilidades-de-credito.webp",
     imagemAlt:
       "Consultor financeiro a analisar informação relacionada com responsabilidades de crédito",
     imagemDestaque:
-      "/images/informativos/central-responsabilidades-credito-destaque.webp",
+      "/images/informativos/central-de-responsabilidades-de-credito.webp",
     imagemDestaqueAlt:
       "Análise profissional de responsabilidades financeiras e histórico de crédito",
 
@@ -406,10 +406,10 @@ export const informativos: Informativo[] = [
     data: "4 outubro 2026",
     tempoLeitura: "5 min",
 
-    imagem: "/images/informativos/taeg-tan-diferenca.webp",
+    imagem: "/images/informativos/taeg-tan.webp",
     imagemAlt:
       "Consultor financeiro a comparar diferentes condições de uma proposta de crédito",
-    imagemDestaque: "/images/informativos/taeg-tan-diferenca-destaque.webp",
+    imagemDestaque: "/images/informativos/taeg-tan.webp",
     imagemDestaqueAlt:
       "Análise profissional de taxas e custos associados a um financiamento",
 
@@ -466,10 +466,10 @@ export const informativos: Informativo[] = [
     data: "4 outubro 2026",
     tempoLeitura: "5 min",
 
-    imagem: "/images/informativos/fin-fine-credito.webp",
+    imagem: "/images/informativos/fin-fine.webp",
     imagemAlt:
       "Consultor financeiro a analisar documentação pré-contratual de crédito",
-    imagemDestaque: "/images/informativos/fin-fine-credito-destaque.webp",
+    imagemDestaque: "/images/informativos/fin-fine.webp",
     imagemDestaqueAlt:
       "Consultor financeiro a explicar documentação de uma proposta de financiamento",
 
@@ -533,11 +533,10 @@ export const informativos: Informativo[] = [
     data: "4 outubro 2026",
     tempoLeitura: "6 min",
 
-    imagem: "/images/informativos/taxa-fixa-variavel-mista.webp",
+    imagem: "/images/informativos/taxa-fixa-variavel-ou-mista.webp",
     imagemAlt:
       "Consultor financeiro a analisar diferentes modalidades de taxa de juro",
-    imagemDestaque:
-      "/images/informativos/taxa-fixa-variavel-mista-destaque.webp",
+    imagemDestaque: "/images/informativos/taxa-fixa-variavel-ou-mista.webp",
     imagemDestaqueAlt:
       "Análise profissional de opções de taxa fixa, variável e mista",
 
@@ -596,7 +595,7 @@ export const informativos: Informativo[] = [
     imagem: "/images/informativos/euribor-spread.webp",
     imagemAlt:
       "Consultor financeiro a analisar uma proposta de crédito à habitação",
-    imagemDestaque: "/images/informativos/euribor-spread-destaque.webp",
+    imagemDestaque: "/images/informativos/euribor-spread.webp",
     imagemDestaqueAlt:
       "Consultor financeiro a explicar componentes de uma taxa de crédito à habitação",
 
