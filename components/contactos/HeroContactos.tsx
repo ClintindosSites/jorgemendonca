@@ -1,9 +1,26 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+const phone = "553135828296";
+const message = encodeURIComponent(
+  "Olá, gostaria de solicitar uma cotação de crédito"
+);
+
+const link = `https://wa.me/${phone}?text=${message}`;
 
 export default function HeroContactos() {
   return (
-    <section className="relative overflow-hidden bg-[#102A43] px-6 py-24 text-white lg:py-32">
+    <section className="relative overflow-hidden bg-[#006f34] px-6 py-24 text-white lg:py-32">
+      {/* Elementos decorativos */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#fefefe]/20"
+      />
+
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-40 -left-40 h-120 w-120 rounded-full border border-[#fefefe]/20"
+      />
+
       <div
         aria-hidden="true"
         className="absolute right-0 top-0 h-full w-1/3 bg-[#006f34]/10"
@@ -38,10 +55,10 @@ export default function HeroContactos() {
 
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a
-              href="https://wa.me/351965710640?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20atendimento."
+              href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors bg-[#006f34] hover:bg-[#0caf58]"
+              className="inline-flex items-center justify-center gap-3 px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors bg-[#147D86] hover:bg-[#0caf58]"
             >
               Falar pelo WhatsApp
               <ArrowRight size={17} />

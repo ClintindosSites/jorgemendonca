@@ -69,17 +69,17 @@ export default function Informativos() {
         <div className="relative mx-auto max-w-7xl">
           <div className="max-w-4xl">
             <div className="mb-6 flex items-center gap-3">
-              <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
+              <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
                 Informativos
               </span>
             </div>
 
-            <h1 className="font-(family-name:--font-manrope) text-5xl font-semibold leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
+            <h1 className="font-(family-name:--font-manrope) text-5xl leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
               Informação para
               <br />
-              <span className="text-[#69B578]">
+              <span className="text-[#fefefe]">
                 compreender melhor o crédito.
               </span>
             </h1>
@@ -137,7 +137,7 @@ export default function Informativos() {
 
                 {/* Ícone */}
 
-                <div className="absolute left-8 top-8 flex h-12 w-12 items-center justify-center border border-white/20 bg-[#102A43]/50 text-[#69B578] backdrop-blur-sm">
+                <div className="absolute left-8 top-8 flex h-12 w-12 items-center justify-center border border-white/20 bg-[#006f34]/50 text-[#fefefe] backdrop-blur-sm">
                   <BookOpen size={21} strokeWidth={1.5} />
                 </div>
 

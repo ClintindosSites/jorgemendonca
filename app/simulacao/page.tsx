@@ -102,7 +102,7 @@ export default function Simulacao() {
         {label}
 
         {selected && (
-          <span className="text-[#C5A059] font-bold text-lg">✓</span>
+          <span className="text-[#006f34] font-bold text-lg">✓</span>
         )}
       </button>
     );
@@ -121,7 +121,7 @@ export default function Simulacao() {
         ).toFixed(2)
       : "0";
   return (
-    <section className=" bg-[linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75)),url('/hero.png')] bg-cover bg-center  min-h-screen bg-gray-50 flex items-center justify-center px-6 py-16">
+    <section className=" bg-[linear-gradient(rgba(10,20,40,0.75),rgba(10,20,40,0.75)),url('/images/hero-04.webp')] bg-cover bg-center  min-h-screen bg-gray-50 flex items-center justify-center px-6 py-16">
       <div className="w-full max-w-xl bg-white rounded-2xl shadow-xl p-8">
         {/* Progress */}
         <div className="mb-8">
@@ -138,7 +138,7 @@ export default function Simulacao() {
         {/* STEP 1 */}
         {step === 1 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-[#c5a059]">
+            <h2 className="text-2xl font-semibold mb-6 text-[#006f34]">
               Qual é o seu nome?
             </h2>
 
@@ -170,7 +170,7 @@ export default function Simulacao() {
         {/* STEP 2 */}
         {step === 2 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-[#c5a059]">
+            <h2 className="text-2xl font-semibold mb-6 text-[#006f34]">
               Qual é o seu email?
             </h2>
 
@@ -190,7 +190,7 @@ export default function Simulacao() {
                 disabled={!form.email}
                 className={`px-6 py-2 rounded-lg text-white ${
                   form.email
-                    ? "bg-[#C5A059] cursor-pointer"
+                    ? "bg-[#006f34] cursor-pointer"
                     : "bg-gray-300 cursor-not-allowed"
                 }`}
               >
@@ -202,7 +202,7 @@ export default function Simulacao() {
         {/* STEP 3 */}
         {step === 3 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-[#c5a059]">
+            <h2 className="text-2xl font-semibold mb-6 text-[#006f34]">
               Qual é o seu telefone?
             </h2>
 
@@ -264,7 +264,7 @@ export default function Simulacao() {
         {/* STEP 4 */}
         {step === 4 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-[#c5a059]">
+            <h2 className="text-2xl font-semibold mb-6 text-[#006f34]">
               Qual tipo de crédito pretende?
             </h2>
 
@@ -283,7 +283,7 @@ export default function Simulacao() {
                   {type}
 
                   {form.creditType === type && (
-                    <span className="text-[#C5A059] font-bold">✓</span>
+                    <span className="text-[#006f34] font-bold">✓</span>
                   )}
                 </button>
               ))}
@@ -311,7 +311,7 @@ export default function Simulacao() {
         {/* STEP 5 */}
         {step === 5 && (
           <div>
-            <h2 className="text-2xl font-semibold mb-6 text-[#c5a059]">
+            <h2 className="text-2xl font-semibold mb-6 text-[#006f34]">
               Qual valor pretende?
             </h2>
 
@@ -354,7 +354,7 @@ ${valorInvalido ? "border-red-500" : "border-gray-300"}`}
             <div className="mt-5 p-4 bg-gray-100 rounded-lg border text-center">
               <p className="text-[#1A2B4C] font-semibold">Valor Selecionado</p>
 
-              <p className="text-3xl font-bold text-[#c5a059]">
+              <p className="text-3xl font-bold text-[#006f34]">
                 {Number(form.amount || 30000).toLocaleString("pt-PT", {
                   style: "currency",
                   currency: "EUR",
@@ -386,7 +386,7 @@ ${valorInvalido ? "border-red-500" : "border-gray-300"}`}
         {/* STEP 6 */}
         {step === 6 && (
           <div>
-            <h2 className="text-2xl font-semibold text-[#c5a059]">
+            <h2 className="text-2xl font-semibold text-[#006f34]">
               Escolha o prazo pretendido
             </h2>
 
@@ -415,7 +415,7 @@ ${valorInvalido ? "border-red-500" : "border-gray-300"}`}
                   Prazo Selecionado
                 </p>
 
-                <p className="text-3xl font-bold text-[#c5a059]">
+                <p className="text-3xl font-bold text-[#006f34]">
                   {form.prazo} meses
                 </p>
 

@@ -41,10 +41,11 @@ h6 {
   max-width: 300px;
 }
 .heroMaster {
-  background-image: url(/my-app/public/hero.png);
+  background-image: url("/public/images/hero-01.webp");
 }
 html,
 body {
   overflow-x: hidden;
   width: 100%;
+  scroll-behavior: smooth;
 }

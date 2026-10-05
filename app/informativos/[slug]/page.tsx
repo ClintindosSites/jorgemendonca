@@ -57,14 +57,20 @@ export default async function InformativoPage({ params }: PageProps) {
           HERO
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-[#102A43] px-6 py-20 text-white lg:py-28">
+      <section className="relative overflow-hidden bg-[#006f34] px-6 py-20 text-white lg:py-28">
+        {/* Elementos decorativos */}
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 h-full w-1/3 bg-[#006f34]/10"
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#fefefe]/20"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-40 -left-40 h-120 w-120 rounded-full border border-[#fefefe]/20"
         />
 
         <div className="relative mx-auto max-w-7xl">
-          <div className="max-w-4xl">
+          <div className="max-w-4xl mt-20">
             <Link
               href="/informativos"
               className="mb-10 inline-flex items-center gap-2 font-(family-name:--font-inter) text-sm text-white/60 transition-colors hover:text-white"
@@ -74,9 +80,9 @@ export default async function InformativoPage({ params }: PageProps) {
             </Link>
 
             <div className="mb-6 flex items-center gap-3">
-              <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
+              <span aria-hidden="true" className="h-px w-10 bg-[#fefefe]" />
 
-              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#69B578]">
+              <span className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.18em] text-[#fefefe]">
                 {informativo.categoria}
               </span>
             </div>

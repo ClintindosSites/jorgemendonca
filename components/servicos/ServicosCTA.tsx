@@ -500,17 +500,17 @@ export default function ServicosCTA() {
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#006f34]/85"
+        className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#fefefe]/85"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full border border-[#006f34]/85"
+        className="pointer-events-none absolute -bottom-40 -left-40 h-96 w-96 rounded-full border border-[#fefefe]/85"
       />
 
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-30 top-20 h-72 w-72 rounded-full border border-[#006f34]/85"
+        className="pointer-events-none absolute -right-30 top-20 h-72 w-72 rounded-full border border-[#fefefe]/85"
       />
 
       {/* =====================================================
@@ -525,9 +525,9 @@ export default function ServicosCTA() {
 
           <div className="pt-4 text-white">
             <div className="mb-5 flex items-center gap-3">
-              <span className="h-px w-10 bg-[#BD965A]" />
+              <span className="h-px w-10 bg-[#fefefe]" />
 
-              <span className="text-sm uppercase tracking-[0.18em] text-[#BD965A]">
+              <span className="text-sm uppercase tracking-[0.18em] text-[#fefefe]">
                 Apresentar pedido
               </span>
             </div>
@@ -550,7 +550,7 @@ export default function ServicosCTA() {
               {/* 01 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#fefefe]/50 text-xs text-[#fefefe]">
                   01
                 </div>
 
@@ -567,7 +567,7 @@ export default function ServicosCTA() {
               {/* 02 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#fefefe]/50 text-xs text-[#fefefe]">
                   02
                 </div>
 
@@ -584,7 +584,7 @@ export default function ServicosCTA() {
               {/* 03 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#fefefe]/50 text-xs text-[#fefefe]">
                   03
                 </div>
 

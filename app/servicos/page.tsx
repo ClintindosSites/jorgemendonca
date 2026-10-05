@@ -7,6 +7,13 @@ import {
   Send,
   ShieldCheck,
 } from "lucide-react";
+const phone = "553135828296";
+
+const message = encodeURIComponent(
+  "Olá! Gostaria de pedir uma simulação de crédito."
+);
+
+const link = `https://wa.me/${phone}?text=${message}`;
 
 export default function ComoFunciona() {
   return (
@@ -15,18 +22,24 @@ export default function ComoFunciona() {
           HERO
       ====================================================== */}
 
-      <section className="relative overflow-hidden bg-[#102A43] px-6 py-24 text-white lg:py-32">
+      <section className="relative overflow-hidden bg-[#006f34] px-6 py-24 text-white lg:py-32">
+        {/* Elementos decorativos */}
         <div
           aria-hidden="true"
-          className="absolute right-0 top-0 h-full w-1/3 bg-[#006f34]/10"
+          className="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full border border-[#fefefe]/20"
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -bottom-40 -left-40 h-120 w-120 rounded-full border border-[#fefefe]/20"
         />
 
         <div className="relative mx-auto max-w-7xl">
           <div className="max-w-4xl">
             <div className="mb-6 flex items-center gap-3">
-              <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
+              <span aria-hidden="true" className="h-px w-10 bg-[#fefefe]" />
 
-              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#fefefe] font-semibold">
                 Como funciona
               </span>
             </div>
@@ -34,7 +47,7 @@ export default function ComoFunciona() {
             <h1 className="font-(family-name:--font-manrope) text-5xl  leading-[1.05] tracking-[-0.04em] md:text-6xl lg:text-7xl">
               Um processo claro,
               <br />
-              <span className="text-[#69B578]">
+              <span className="text-[#fefefe]">
                 do primeiro contacto à decisão.
               </span>
             </h1>
@@ -47,7 +60,8 @@ export default function ComoFunciona() {
 
             <div className="mt-10">
               <Link
-                href="/apresentar-pedido"
+                href={link}
+                target="_blank"
                 className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
               >
                 Apresentar pedido
@@ -69,7 +83,7 @@ export default function ComoFunciona() {
               <div className="mb-5 flex items-center gap-3">
                 <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
+                <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
                   O processo
                 </span>
               </div>
@@ -107,11 +121,11 @@ export default function ComoFunciona() {
 
             <div className="relative bg-white p-8 lg:p-10">
               <div className="mb-10 flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#006f34] text-[#fefefe]">
                   <Send size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#006f34]/35">
                   01
                 </span>
               </div>
@@ -146,11 +160,11 @@ export default function ComoFunciona() {
 
             <div className="relative bg-white p-8 lg:p-10">
               <div className="mb-10 flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#006f34] text-[#fefefe]">
                   <MessageCircle size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#006f34]/35">
                   02
                 </span>
               </div>
@@ -186,11 +200,11 @@ export default function ComoFunciona() {
 
             <div className="relative bg-white p-8 lg:p-10">
               <div className="mb-10 flex items-center justify-between">
-                <div className="flex h-12 w-12 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <div className="flex h-12 w-12 items-center justify-center bg-[#006f34] text-[#fefefe]">
                   <FileText size={20} strokeWidth={1.5} />
                 </div>
 
-                <span className="font-(family-name:--font-manrope) text-5xl  text-[#E8EEF0]">
+                <span className="font-(family-name:--font-manrope) text-5xl  text-[#006f34]/35">
                   03
                 </span>
               </div>
@@ -255,7 +269,7 @@ export default function ComoFunciona() {
             <div className="border border-[#D9E1E5] bg-[#F7F9FA] p-8 lg:p-10">
               <div className="space-y-6">
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#006f34] text-[#fefefe]">
                     <FileText size={17} />
                   </div>
 
@@ -273,7 +287,7 @@ export default function ComoFunciona() {
                 <div className="border-t border-[#D9E1E5]" />
 
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#006f34] text-[#fefefe]">
                     <MessageCircle size={17} />
                   </div>
 
@@ -292,7 +306,7 @@ export default function ComoFunciona() {
                 <div className="border-t border-[#D9E1E5]" />
 
                 <div className="flex gap-4">
-                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#006f34] text-[#fefefe]">
                     <ShieldCheck size={17} />
                   </div>
 
@@ -317,16 +331,16 @@ export default function ComoFunciona() {
           DECISÃO
       ====================================================== */}
 
-      <section className="bg-[#102A43] px-6 py-20 text-white lg:py-24">
+      <section className="bg-[#006f34] px-6 py-20 text-white lg:py-24">
         <div className="mx-auto max-w-5xl text-center">
           <div className="mx-auto mb-5 flex items-center justify-center gap-3">
-            <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
+            <span aria-hidden="true" className="h-px w-10 bg-[#fefefe]" />
 
-            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#69B578]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#fefefe]">
               Importante
             </span>
 
-            <span aria-hidden="true" className="h-px w-10 bg-[#69B578]" />
+            <span aria-hidden="true" className="h-px w-10 bg-[#fefefe]" />
           </div>
 
           <h2 className="font-(family-name:--font-manrope) text-3xl  tracking-[-0.03em] md:text-4xl">
@@ -451,8 +465,8 @@ export default function ComoFunciona() {
 
             <div className="mt-8">
               <Link
-                href="/apresentar-pedido"
-                className="inline-flex items-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
+                href={link}
+                className="inline-flex items-center gap-3 bg-[#006f34] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#006f34]"
               >
                 Apresentar pedido
                 <ArrowRight size={18} />
