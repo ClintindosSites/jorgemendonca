@@ -232,11 +232,11 @@ export default function Informativos() {
                   className="group bg-white p-7 transition-all duration-300 hover:bg-[#FCFDFC] lg:p-8"
                 >
                   <div className="flex items-start justify-between gap-4">
-                    <div className="flex h-11 w-11 items-center justify-center bg-[#102A43] text-[#69B578] transition-transform duration-300 group-hover:scale-105">
+                    <div className="flex h-11 w-11 items-center justify-center bg-[#006f34] text-[#fefefe] transition-transform duration-300 group-hover:scale-105">
                       <Icon size={20} strokeWidth={1.5} />
                     </div>
 
-                    <span className="font-(family-name:--font-manrope) text-2xl font-semibold text-[#E8EEF0]">
+                    <span className="font-(family-name:--font-manrope) text-2xl font-semibold text-[#006f34]/25">
                       {String(quantidade).padStart(2, "0")}
                     </span>
                   </div>
@@ -300,7 +300,7 @@ export default function Informativos() {
 
                 <Link
                   href={`/informativos/${artigo.slug}`}
-                  className="relative block aspect-video overflow-hidden bg-[#102A43]"
+                  className="relative block aspect-video overflow-hidden "
                 >
                   <div
                     className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -314,7 +314,7 @@ export default function Informativos() {
                     className="absolute inset-0 bg-linear-to-t from-[#102A43]/75 via-transparent to-transparent"
                   />
 
-                  <span className="absolute left-5 top-5 bg-[#102A43]/85 px-3 py-1.5 font-(family-name:--font-inter) text-[10px] font-semibold uppercase tracking-[0.14em] text-[#69B578] backdrop-blur-sm">
+                  <span className="absolute left-5 top-5 bg-[#006f34] px-3 py-1.5 font-(family-name:--font-inter) text-[10px] font-semibold uppercase tracking-[0.14em] text-[#fefefe] backdrop-blur-sm">
                     {artigo.categoria}
                   </span>
 
@@ -356,7 +356,7 @@ export default function Informativos() {
                   <div className="mt-7 border-t border-[#E2E8EB] pt-6">
                     <Link
                       href={`/informativos/${artigo.slug}`}
-                      className="group/link inline-flex items-center gap-2 font-(family-name:--font-inter) text-sm font-semibold text-[#147D86] transition-colors hover:text-[#106A72]"
+                      className="group/link inline-flex items-center gap-2 font-(family-name:--font-inter) text-sm font-semibold text-[#006f34] transition-colors hover:text-[#106A72]"
                     >
                       Ler informativo
                       <ArrowRight
@@ -376,19 +376,19 @@ export default function Informativos() {
           NOTA EDITORIAL
       ====================================================== */}
 
-      <section className="bg-[#102A43] px-6 py-16 text-white lg:py-20">
+      <section className="bg-[#006f34] px-6 py-16 text-white lg:py-20">
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-8 md:grid-cols-[auto_1fr] md:items-start md:gap-10">
-            <div className="flex h-12 w-12 items-center justify-center border border-white/15 bg-white/5 text-[#69B578]">
+            <div className="flex h-12 w-12 items-center justify-center border border-white/15 bg-white/5 text-[#ffffff]">
               <BookOpen size={20} strokeWidth={1.5} />
             </div>
 
             <div>
-              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.15em] text-[#69B578]">
+              <p className="font-(family-name:--font-inter) text-xs font-semibold uppercase tracking-[0.15em] text-[#ffffff]">
                 Nota informativa
               </p>
 
-              <p className="mt-3 font-(family-name:--font-inter) text-sm leading-7 text-white/65">
+              <p className="mt-3 font-(family-name:--font-inter) text-sm leading-7 text-white/85">
                 Os conteúdos disponibilizados nesta área têm caráter
                 exclusivamente informativo e destinam-se a ajudar a compreender
                 melhor os processos relacionados com financiamento. A informação

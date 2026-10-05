@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 const VALOR_MINIMO = 30000;
 const VALOR_MAXIMO = 1000000;
 const VALOR_INTERVALO = 10000;
+const TEMPO_MINIMO_FORMULARIO = 2500;
 
 const finalidades = [
   "Crédito Pessoal",
@@ -16,8 +17,6 @@ const finalidades = [
   "Outro",
 ];
 
-const TEMPO_MINIMO_FORMULARIO = 2500;
-
 type FormState = {
   nome: string;
   whatsapp: string;
@@ -25,9 +24,12 @@ type FormState = {
   finalidade: string;
   valor: string;
   consentimento: boolean;
-
-  // Campo invisível utilizado como honeypot anti-bot
   website: string;
+};
+
+type ApiResponse = {
+  success?: boolean;
+  error?: string;
 };
 
 export default function ServicosCTA() {
@@ -48,7 +50,7 @@ export default function ServicosCTA() {
 
   /*
    * Guarda o momento em que o formulário foi carregado.
-   * useRef evita renders desnecessários.
+   * Utilizado pelo anti-bot.
    */
   const formularioIniciado = useRef(Date.now());
 
@@ -77,42 +79,24 @@ export default function ServicosCTA() {
   /*
    * ============================================================
    * CONTACTO
+   * ============================================================
    *
-   * O formulário trabalha internamente apenas com os
-   * 9 dígitos do número português.
+   * Internamente trabalhamos apenas com os 9 dígitos
+   * do número português.
    *
-   * Exemplos aceites:
-   *
+   * Aceita:
    * 912345678
    * +351 912 345 678
    * +351912345678
    * 00351 912 345 678
-   * ============================================================
    */
 
   const normalizarContacto = (telefone: string): string => {
     let numeros = telefone.replace(/\D/g, "");
 
-    /*
-     * Se vier com 00351:
-     *
-     * 00351 912 345 678
-     * -> 912345678
-     */
     if (numeros.startsWith("00351")) {
       numeros = numeros.slice(5);
     } else if (numeros.startsWith("351") && numeros.length > 9) {
-      /*
-       * Só removemos 351 quando sabemos que é um número
-       * internacional completo.
-       *
-       * Isto evita o problema anterior em que:
-       *
-       * 351...
-       *
-       * podia ter o 351 removido enquanto o utilizador
-       * ainda estava a escrever o número nacional.
-       */
       numeros = numeros.slice(3);
     }
 
@@ -126,10 +110,9 @@ export default function ServicosCTA() {
   /*
    * ============================================================
    * EMAIL
+   * ============================================================
    *
    * Email é opcional.
-   * Caso seja preenchido, precisa ser válido.
-   * ============================================================
    */
 
   const emailValido =
@@ -166,9 +149,7 @@ export default function ServicosCTA() {
     const { name, value } = e.target;
 
     /*
-     * ----------------------------------------------------------
      * HONEYPOT
-     * ----------------------------------------------------------
      */
 
     if (name === "website") {
@@ -181,12 +162,7 @@ export default function ServicosCTA() {
     }
 
     /*
-     * ----------------------------------------------------------
      * VALOR
-     *
-     * O slider já limita o intervalo.
-     * Mesmo assim, fazemos uma proteção adicional.
-     * ----------------------------------------------------------
      */
 
     if (name === "valor") {
@@ -208,43 +184,18 @@ export default function ServicosCTA() {
     }
 
     /*
-     * ----------------------------------------------------------
      * WHATSAPP / TELEFONE
-     * ----------------------------------------------------------
      */
 
     if (name === "whatsapp") {
       let numbers = value.replace(/\D/g, "");
 
-      /*
-       * Se o utilizador colar:
-       *
-       * 00351 912 345 678
-       *
-       * removemos o 00351.
-       */
       if (numbers.startsWith("00351")) {
         numbers = numbers.slice(5);
       } else if (numbers.startsWith("351") && numbers.length > 9) {
-        /*
-         * Se o utilizador colar:
-         *
-         * +351 912 345 678
-         *
-         * depois da remoção dos caracteres não numéricos
-         * teremos:
-         *
-         * 351912345678
-         *
-         * Portanto removemos o 351 somente quando temos
-         * mais de 9 dígitos.
-         */
         numbers = numbers.slice(3);
       }
 
-      /*
-       * Portugal utiliza 9 dígitos no número nacional.
-       */
       numbers = numbers.slice(0, 9);
 
       /*
@@ -278,9 +229,7 @@ export default function ServicosCTA() {
     }
 
     /*
-     * ----------------------------------------------------------
      * RESTANTE DOS CAMPOS
-     * ----------------------------------------------------------
      */
 
     setForm(prev => ({
@@ -313,10 +262,6 @@ export default function ServicosCTA() {
    */
 
   const enviarPedido = async () => {
-    /*
-     * Evita múltiplos cliques / múltiplas requisições.
-     */
-
     if (enviando) {
       return;
     }
@@ -324,9 +269,7 @@ export default function ServicosCTA() {
     setErro("");
 
     /*
-     * ==========================================================
      * HONEYPOT
-     * ==========================================================
      */
 
     if (form.website.trim() !== "") {
@@ -334,23 +277,18 @@ export default function ServicosCTA() {
     }
 
     /*
-     * ==========================================================
      * TEMPO MÍNIMO
-     * ==========================================================
      */
 
     const tempoDecorrido = Date.now() - formularioIniciado.current;
 
     if (tempoDecorrido < TEMPO_MINIMO_FORMULARIO) {
       setErro("Aguarde alguns segundos antes de apresentar o pedido.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * VALOR
-     * ==========================================================
      */
 
     if (
@@ -359,87 +297,62 @@ export default function ServicosCTA() {
       valorNumerico > VALOR_MAXIMO
     ) {
       setErro("O valor pretendido deve estar entre 30.000 € e 1.000.000 €.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * NOME
-     * ==========================================================
      */
 
     if (form.nome.trim().length < 2) {
       setErro("Indique o seu nome completo.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * CONTACTO
-     * ==========================================================
      */
 
     if (!whatsappValido) {
       setErro("Indique um número de contacto válido com 9 dígitos.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * FINALIDADE
-     * ==========================================================
      */
 
     if (!form.finalidade) {
       setErro("Selecione a finalidade do financiamento.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * EMAIL
-     * ==========================================================
      */
 
     if (!emailValido) {
       setErro("Indique um endereço de email válido.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * CONSENTIMENTO
-     * ==========================================================
      */
 
     if (!form.consentimento) {
       setErro("É necessário aceitar a Política de Privacidade.");
-
       return;
     }
 
     /*
-     * ==========================================================
      * VALIDAÇÃO FINAL
-     * ==========================================================
      */
 
     if (!podeEnviar) {
       setErro("Verifique os campos obrigatórios antes de continuar.");
-
       return;
     }
-
-    /*
-     * ==========================================================
-     * ENVIO
-     * ==========================================================
-     */
 
     try {
       setEnviando(true);
@@ -450,7 +363,7 @@ export default function ServicosCTA() {
 
       const controller = new AbortController();
 
-      const timeout = setTimeout(() => {
+      const timeout = window.setTimeout(() => {
         controller.abort();
       }, 15000);
 
@@ -458,7 +371,6 @@ export default function ServicosCTA() {
        * Número final normalizado.
        *
        * Exemplo:
-       *
        * +351 912 345 678
        */
 
@@ -467,50 +379,54 @@ export default function ServicosCTA() {
         3
       )} ${numerosContacto.slice(3, 6)} ${numerosContacto.slice(6, 9)}`;
 
+      /*
+       * ========================================================
+       * ENVIO PARA A API
+       * ========================================================
+       *
+       * Todos os formulários do site utilizam:
+       *
+       * POST /api/lead
+       *
+       * O que diferencia cada formulário é o "formType".
+       *
+       * Este formulário utiliza:
+       *
+       * pedido-financiamento
+       */
+
       const res = await fetch("/api/lead", {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
         },
-
         signal: controller.signal,
-
         body: JSON.stringify({
           formType: "pedido-financiamento",
 
           data: {
             nome: form.nome.trim(),
-
             whatsapp: contactoNormalizado,
-
             email: form.email.trim(),
-
             finalidade: form.finalidade,
-
             valor: String(valorNumerico),
-
             consentimento: form.consentimento,
           },
 
-          /*
-           * Dados auxiliares para validação no servidor.
-           */
-
           antiBot: {
             website: form.website,
-
             startedAt: formularioIniciado.current,
           },
         }),
       });
 
-      clearTimeout(timeout);
+      /*
+       * O pedido terminou, portanto podemos cancelar o timeout.
+       */
 
-      let data: {
-        success?: boolean;
-        error?: string;
-      } = {};
+      window.clearTimeout(timeout);
+
+      let data: ApiResponse = {};
 
       try {
         data = await res.json();
@@ -611,12 +527,12 @@ export default function ServicosCTA() {
             <div className="mb-5 flex items-center gap-3">
               <span className="h-px w-10 bg-[#BD965A]" />
 
-              <span className="text-sm  uppercase tracking-[0.18em] text-[#BD965A]">
+              <span className="text-sm uppercase tracking-[0.18em] text-[#BD965A]">
                 Apresentar pedido
               </span>
             </div>
 
-            <h2 className="max-w-2xl text-4xl  leading-[1.06] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
+            <h2 className="max-w-2xl text-4xl leading-[1.06] tracking-[-0.035em] sm:text-5xl lg:text-6xl">
               Um primeiro passo
               <br />
               para o seu pedido.
@@ -628,20 +544,18 @@ export default function ServicosCTA() {
               acordo com as características da sua situação.
             </p>
 
-            {/* =================================================
-                PROCESSO
-            ================================================= */}
+            {/* PROCESSO */}
 
             <div className="mt-12 space-y-7">
               {/* 01 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
                   01
                 </div>
 
                 <div>
-                  <h3 className="text-base ">Apresente o pedido</h3>
+                  <h3 className="text-base">Apresente o pedido</h3>
 
                   <p className="mt-1 text-sm leading-6 text-white/55">
                     Indique o valor pretendido, a finalidade e os seus dados de
@@ -653,12 +567,12 @@ export default function ServicosCTA() {
               {/* 02 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
                   02
                 </div>
 
                 <div>
-                  <h3 className="text-base ">Contacto e esclarecimento</h3>
+                  <h3 className="text-base">Contacto e esclarecimento</h3>
 
                   <p className="mt-1 text-sm leading-6 text-white/55">
                     Entraremos em contacto para compreender o pedido e
@@ -670,14 +584,12 @@ export default function ServicosCTA() {
               {/* 03 */}
 
               <div className="flex gap-5">
-                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs  text-[#BD965A]">
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#BD965A]/50 text-xs text-[#BD965A]">
                   03
                 </div>
 
                 <div>
-                  <h3 className="text-base ">
-                    Condições por escrito e decisão
-                  </h3>
+                  <h3 className="text-base">Condições por escrito e decisão</h3>
 
                   <p className="mt-1 text-sm leading-6 text-white/55">
                     As condições aplicáveis são apresentadas por escrito antes
@@ -693,13 +605,11 @@ export default function ServicosCTA() {
           ================================================= */}
 
           <div className="relative bg-white p-7 shadow-2xl sm:p-9 lg:p-10">
-            {/* =================================================
-                HONEYPOT
-            ================================================= */}
+            {/* HONEYPOT */}
 
             <div
               aria-hidden="true"
-              className="absolute -left-2499.75 top-auto h-px w-px overflow-hidden"
+              className="absolute -left-624.75 top-auto h-px w-px overflow-hidden"
             >
               <label htmlFor="website">Website</label>
 
@@ -714,12 +624,10 @@ export default function ServicosCTA() {
               />
             </div>
 
-            {/* =================================================
-                CABEÇALHO
-            ================================================= */}
+            {/* CABEÇALHO */}
 
             <div className="border-b border-[#D9E1E5] pb-6">
-              <h3 className="text-2xl  tracking-[-0.02em] text-[#102A43] sm:text-3xl">
+              <h3 className="text-2xl tracking-[-0.02em] text-[#102A43] sm:text-3xl">
                 Apresente o seu pedido
               </h3>
 
@@ -729,9 +637,7 @@ export default function ServicosCTA() {
             </div>
 
             <div className="mt-7 space-y-5">
-              {/* =================================================
-                  VALOR PRETENDIDO
-              ================================================= */}
+              {/* VALOR */}
 
               <div>
                 <label
@@ -748,7 +654,7 @@ export default function ServicosCTA() {
                       Montante selecionado
                     </p>
 
-                    <p className="mt-1 text-3xl  tracking-[-0.03em] text-[#102A43]">
+                    <p className="mt-1 text-3xl tracking-[-0.03em] text-[#102A43]">
                       {formatarValor(form.valor)}
                     </p>
                   </div>
@@ -757,8 +663,6 @@ export default function ServicosCTA() {
                     máximo 1.000.000 €
                   </span>
                 </div>
-
-                {/* SLIDER */}
 
                 <input
                   id="valor"
@@ -776,17 +680,11 @@ export default function ServicosCTA() {
                   className="h-2 w-full cursor-pointer appearance-none rounded-full bg-[#D9E1E5] accent-[#147D86]"
                 />
 
-                {/* ESCALA */}
-
                 <div className="mt-3 flex justify-between text-xs text-[#7A8A95]">
                   <span>30.000 €</span>
-
                   <span className="hidden sm:inline">250.000 €</span>
-
                   <span>500.000 €</span>
-
                   <span className="hidden sm:inline">750.000 €</span>
-
                   <span>1.000.000 €</span>
                 </div>
 
@@ -795,9 +693,7 @@ export default function ServicosCTA() {
                 </p>
               </div>
 
-              {/* =================================================
-                  FINALIDADE
-              ================================================= */}
+              {/* FINALIDADE */}
 
               <div>
                 <label
@@ -825,9 +721,7 @@ export default function ServicosCTA() {
                 </select>
               </div>
 
-              {/* =================================================
-                  NOME
-              ================================================= */}
+              {/* NOME */}
 
               <div>
                 <label
@@ -851,9 +745,7 @@ export default function ServicosCTA() {
                 />
               </div>
 
-              {/* =================================================
-                  CONTACTO
-              ================================================= */}
+              {/* CONTACTO */}
 
               <div>
                 <label
@@ -887,9 +779,7 @@ export default function ServicosCTA() {
                 </p>
               </div>
 
-              {/* =================================================
-                  EMAIL
-              ================================================= */}
+              {/* EMAIL */}
 
               <div>
                 <label
@@ -919,9 +809,7 @@ export default function ServicosCTA() {
                 />
               </div>
 
-              {/* =================================================
-                  CONSENTIMENTO
-              ================================================= */}
+              {/* CONSENTIMENTO */}
 
               <div className="border-t border-[#D9E1E5] pt-5">
                 <label className="flex cursor-pointer items-start gap-3">
@@ -946,9 +834,7 @@ export default function ServicosCTA() {
                 </label>
               </div>
 
-              {/* =================================================
-                  ERRO
-              ================================================= */}
+              {/* ERRO */}
 
               {erro && (
                 <div
@@ -959,9 +845,7 @@ export default function ServicosCTA() {
                 </div>
               )}
 
-              {/* =================================================
-                  BOTÃO
-              ================================================= */}
+              {/* BOTÃO */}
 
               <button
                 type="button"
@@ -970,7 +854,7 @@ export default function ServicosCTA() {
                 aria-disabled={!podeEnviar || enviando}
                 className={`
                   group flex w-full items-center justify-center gap-3
-                  px-6 py-4 text-sm 
+                  px-6 py-4 text-sm
                   transition-all
                   ${
                     !podeEnviar || enviando
@@ -990,9 +874,7 @@ export default function ServicosCTA() {
               </button>
             </div>
 
-            {/* =================================================
-                NOTA DE SEGURANÇA / DECISÃO
-            ================================================= */}
+            {/* NOTA DE SEGURANÇA */}
 
             <div className="mt-6 flex gap-3 border-t border-[#D9E1E5] pt-5">
               <ShieldCheck

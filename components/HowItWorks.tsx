@@ -50,7 +50,7 @@ export default function ComoFunciona() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#006f34]" />
 
-            <span className="text-sm  uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="text-sm  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
               Como funciona
             </span>
           </div>
@@ -86,20 +86,20 @@ export default function ComoFunciona() {
                 >
                   {/* Número / ícone */}
                   <div className="relative z-10 mb-8 flex items-center justify-between">
-                    <span className="font-(--font-heading) text-sm  tracking-[0.16em] text-[#006f34]">
+                    <span className="font-semibold text-sm  tracking-[0.16em] text-[#006f34]">
                       {step.number}
                     </span>
 
-                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#D6E0E5] bg-white">
+                    <div className="flex h-14 w-14 items-center justify-center rounded-full border border-[#006f34] bg-white">
                       <Icon
                         size={24}
                         strokeWidth={1.7}
-                        className="text-[#147D86]"
+                        className="text-[#006f34] font-semibold"
                       />
                     </div>
                   </div>
 
-                  <h3 className="font-(--font-heading) text-2xl  tracking-[-0.02em] text-[#102A43]">
+                  <h3 className="font-(--font-heading) text-2xl  tracking-[-0.02em] text-[#006f34]">
                     {step.title}
                   </h3>
 

@@ -24,7 +24,7 @@ export default function Credibilidade() {
 
           {/* CONTEÚDO */}
           <div>
-            <span className="font-(family-name:--font-inter) text-sm  uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="font-(family-name:--font-inter) text-sm  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
               Sobre o acompanhamento
             </span>
 
@@ -70,7 +70,7 @@ export default function Credibilidade() {
 
             {/* PARCERIA */}
             <div className="mt-12 border-t border-[#D8E2E7] pt-10">
-              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#147D86]">
+              <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
                 Parceria institucional
               </span>
 

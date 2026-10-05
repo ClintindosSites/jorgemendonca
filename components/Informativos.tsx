@@ -113,7 +113,7 @@ export default function Informativos() {
           <div className="mb-5 flex items-center gap-3">
             <span className="h-px w-10 bg-[#006f34]" />
 
-            <span className="text-sm uppercase tracking-[0.18em] text-[#147D86]">
+            <span className="text-sm uppercase tracking-[0.18em] text-[#006f34] font-semibold">
               Informativos
             </span>
           </div>
@@ -231,7 +231,7 @@ export default function Informativos() {
 
           <div className="border-x border-b border-[#D9E1E5] lg:border-b-0">
             <div className="flex items-center justify-between border-b border-[#D9E1E5] px-6 py-5 sm:px-7">
-              <span className="text-xs uppercase tracking-[0.16em] text-[#147D86]">
+              <span className="text-xs uppercase tracking-[0.16em] text-[#006f34] font-semibold">
                 Mais informativos
               </span>
 

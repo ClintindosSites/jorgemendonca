@@ -105,7 +105,7 @@ export default function NewHero() {
             key={`eyebrow-${current}`}
             className="animate-[heroFade_700ms_ease-out]"
           >
-            <span className="mb-6 block font-(family-name:--font-inter) text-sm font-medium uppercase tracking-[0.18em] text-[#BD965A]">
+            <span className="mb-6 block font-(family-name:--font-inter) text-sm font-medium uppercase tracking-[0.18em] text-[#ffffff]">
               {slide.eyebrow}
             </span>
           </div>

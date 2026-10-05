@@ -10,8 +10,8 @@ const contactos = [
   {
     icon: MessageCircle,
     titulo: "WhatsApp",
-    valor: "+351 965 710 640",
-    href: "https://wa.me/351965710640?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20atendimento.",
+    valor: "+55 31 3582-8296",
+    href: "https://wa.me/553135828296?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20um%20empréstimo.",
   },
   {
     icon: Clock,
@@ -35,7 +35,7 @@ export default function ContactInfoCards() {
           <div className="mb-5 flex items-center gap-3">
             <span aria-hidden="true" className="h-px w-10 bg-[#006f34]" />
 
-            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34]">
+            <span className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.18em] text-[#006f34] font-semibold">
               Contacte-nos
             </span>
           </div>
@@ -57,7 +57,7 @@ export default function ContactInfoCards() {
 
             const content = (
               <>
-                <div className="flex h-11 w-11 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <div className="flex h-11 w-11 items-center justify-center bg-[#006f34] text-[#fefefe]">
                   <Icon size={20} strokeWidth={1.5} />
                 </div>
 
@@ -102,7 +102,7 @@ export default function ContactInfoCards() {
         <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_0.8fr]">
           <div className="border border-[#D9E1E5] bg-[#F7F9FA] p-8 lg:p-10">
             <div className="flex items-start gap-5">
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center bg-[#006f34] text-[#fefefe]">
                 <MapPin size={20} strokeWidth={1.5} />
               </div>
 
@@ -124,8 +124,8 @@ export default function ContactInfoCards() {
             </div>
           </div>
 
-          <div className="bg-[#102A43] p-8 text-white lg:p-10">
-            <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.16em] text-[#69B578]">
+          <div className="bg-[#006f34] p-8 text-[#fefefe] lg:p-10">
+            <p className="font-(family-name:--font-inter) text-xs  uppercase tracking-[0.16em] text-[#fefefe]/75">
               Atendimento
             </p>
 
@@ -136,7 +136,6 @@ export default function ContactInfoCards() {
             <p className="mt-3 font-(family-name:--font-inter) text-sm leading-7 text-white/60">
               Das 09:00 às 18:00.
               <br />
-              Sábados mediante marcação.
             </p>
           </div>
         </div>

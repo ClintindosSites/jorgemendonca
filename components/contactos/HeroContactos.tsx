@@ -41,7 +41,7 @@ export default function HeroContactos() {
               href="https://wa.me/351965710640?text=Ol%C3%A1%2C%20gostaria%20de%20marcar%20um%20atendimento."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-3 bg-[#147D86] px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors hover:bg-[#106A72]"
+              className="inline-flex items-center justify-center gap-3 px-7 py-4 font-(family-name:--font-inter) text-sm  text-white transition-colors bg-[#006f34] hover:bg-[#0caf58]"
             >
               Falar pelo WhatsApp
               <ArrowRight size={17} />

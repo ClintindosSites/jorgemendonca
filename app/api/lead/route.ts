@@ -297,79 +297,277 @@ export async function POST(req: Request) {
     }
 
     if (formType === "contactos") {
-      const subject = "Novo Contacto pelo Site";
+      const nome = String(data?.nome ?? "").trim();
+      const email = String(data?.email ?? "").trim();
+      const whatsapp = normalizarContacto(data?.whatsapp);
+      const tipo = String(data?.tipo ?? "").trim();
+      const mensagem = String(data?.mensagem ?? "").trim();
+      const consentimento = data?.consentimento === true;
+
+      /*
+  ============================================================
+  VALIDAÇÕES SERVER-SIDE
+  ============================================================
+  */
+
+      if (nome.length < 2) {
+        return respostaErro("Indique o seu nome.");
+      }
+
+      if (nome.length > 120) {
+        return respostaErro("O nome indicado é demasiado longo.");
+      }
+
+      if (!/^[0-9]{9}$/.test(whatsapp)) {
+        return respostaErro(
+          "Indique um número de WhatsApp válido com 9 dígitos."
+        );
+      }
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return respostaErro("Indique um endereço de email válido.");
+      }
+
+      if (email.length > 160) {
+        return respostaErro("O endereço de email é demasiado longo.");
+      }
+
+      if (!tipo) {
+        return respostaErro("Selecione o motivo do contacto.");
+      }
+
+      if (tipo.length > 100) {
+        return respostaErro("O motivo do contacto é inválido.");
+      }
+
+      if (mensagem.length < 5) {
+        return respostaErro("Escreva uma mensagem.");
+      }
+
+      if (mensagem.length > 3000) {
+        return respostaErro("A mensagem é demasiado longa.");
+      }
+
+      if (!consentimento) {
+        return respostaErro("É necessário aceitar a Política de Privacidade.");
+      }
+
+      /*
+  ============================================================
+  CONTACTO FORMATADO
+  ============================================================
+  */
+
+      const contactoFormatado =
+        `+351 ${whatsapp.slice(0, 3)} ` +
+        `${whatsapp.slice(3, 6)} ` +
+        `${whatsapp.slice(6, 9)}`;
+
+      /*
+  ============================================================
+  EMAIL
+  ============================================================
+  */
+
+      const subject = "Novo Contacto pelo Site — jorgemendonca.com";
 
       const html = `
-    <div style="font-family:Arial;max-width:700px;margin:auto">
+    <div style="
+      font-family:Arial,sans-serif;
+      max-width:700px;
+      margin:auto;
+      color:#222;
+    ">
 
-      <h2 style="color:#1A2B4C;">
-        Novo Contacto pelo Site
-      </h2>
+      <div style="
+        background:#102A43;
+        padding:24px;
+        color:white;
+      ">
 
-      <hr/>
+        <h2 style="
+          margin:0;
+          font-size:22px;
+        ">
+          Novo Contacto pelo Site
+        </h2>
 
-      <table style="width:100%;border-collapse:collapse">
+        <p style="
+          margin:8px 0 0;
+          color:#D9E1E5;
+        ">
+          Contacto recebido através do site
+          jorgemendonca.com
+        </p>
+
+      </div>
+
+      <table style="
+        width:100%;
+        border-collapse:collapse;
+        margin-top:20px;
+      ">
 
         <tr>
-          <td style="padding:10px;border:1px solid #ddd;">
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+            width:35%;
+            background:#f7f7f7;
+          ">
             <b>Nome</b>
           </td>
-          <td style="padding:10px;border:1px solid #ddd;">
-            ${data?.nome || "-"}
+
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+          ">
+            ${escaparHtml(nome)}
           </td>
         </tr>
 
         <tr>
-          <td style="padding:10px;border:1px solid #ddd;">
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+            background:#f7f7f7;
+          ">
             <b>Email</b>
           </td>
-          <td style="padding:10px;border:1px solid #ddd;">
-            ${data?.email || "-"}
+
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+          ">
+            ${escaparHtml(email)}
           </td>
         </tr>
 
         <tr>
-          <td style="padding:10px;border:1px solid #ddd;">
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+            background:#f7f7f7;
+          ">
             <b>WhatsApp</b>
           </td>
-          <td style="padding:10px;border:1px solid #ddd;">
-            ${data?.whatsapp || "-"}
+
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+          ">
+            ${escaparHtml(contactoFormatado)}
           </td>
         </tr>
 
         <tr>
-          <td style="padding:10px;border:1px solid #ddd;">
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+            background:#f7f7f7;
+          ">
             <b>Motivo</b>
           </td>
-          <td style="padding:10px;border:1px solid #ddd;">
-            ${data?.tipo || "-"}
+
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+          ">
+            ${escaparHtml(tipo)}
+          </td>
+        </tr>
+
+        <tr>
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+            background:#f7f7f7;
+          ">
+            <b>Consentimento</b>
+          </td>
+
+          <td style="
+            padding:12px;
+            border:1px solid #ddd;
+          ">
+            Sim
           </td>
         </tr>
 
       </table>
 
-      <h3 style="color:#C5A059;margin-top:30px;">
+      <h3 style="
+        color:#C5A059;
+        margin-top:30px;
+      ">
         Mensagem
       </h3>
 
-      <div style="padding:15px;border:1px solid #ddd;">
-        ${data?.mensagem || "Não foi apresentada nenhuma mensagem."}
+      <div style="
+        padding:16px;
+        border:1px solid #ddd;
+        background:#fafafa;
+        line-height:1.6;
+        white-space:pre-wrap;
+      ">
+        ${escaparHtml(mensagem || "Não foi apresentada nenhuma mensagem.")}
+      </div>
+
+      <div style="
+        margin-top:24px;
+        padding:16px;
+        background:#f7f7f7;
+        border-left:4px solid #147D86;
+        font-size:13px;
+        line-height:1.6;
+        color:#667783;
+      ">
+        Este contacto foi submetido através do formulário
+        de contactos do site.
       </div>
 
     </div>
-    
   `;
-      await resend.emails.send({
+
+      /*
+  ============================================================
+  ENVIO RESEND
+  ============================================================
+  */
+
+      const resultado = await resend.emails.send({
         from: EMAIL_FROM,
         to: EMAIL_DESTINO,
         subject,
         html,
-        replyTo: data?.email || undefined,
+        replyTo: email,
       });
 
-      return Response.json({ success: true });
-    }
+      /*
+  ============================================================
+  ERRO RESEND
+  ============================================================
+  */
 
+      if (resultado.error) {
+        console.error("Erro ao enviar contacto pelo Resend:", resultado.error);
+
+        return respostaErro(
+          "Não foi possível enviar a mensagem. Tente novamente.",
+          500
+        );
+      }
+
+      /*
+  ============================================================
+  SUCESSO
+  ============================================================
+  */
+
+      return Response.json({
+        success: true,
+      });
+    }
     /*
     ============================================================
     FORMULÁRIO HERO
