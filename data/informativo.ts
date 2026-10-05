@@ -723,7 +723,7 @@ export const informativos: Informativo[] = [
     imagem: "/images/informativos/reembolso-antecipado.webp",
     imagemAlt:
       "Consultor financeiro a analisar uma decisão de amortização antecipada",
-    imagemDestaque: "/images/informativos/reembolso-antecipado-destaque.webp",
+    imagemDestaque: "/images/informativos/reembolso-antecipado.webp",
     imagemDestaqueAlt:
       "Consultor financeiro a explicar uma operação de reembolso antecipado",
 
@@ -827,6 +827,555 @@ export const informativos: Informativo[] = [
           "Antes de iniciar um processo, é importante confirmar o enquadramento e a autorização da entidade com quem pretende trabalhar.",
           "O Banco de Portugal disponibiliza informação sobre os intermediários de crédito autorizados a exercer atividade em Portugal.",
           "Também é importante compreender claramente os serviços prestados, eventuais custos e condições do acompanhamento antes de avançar.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "organizacao-financeira-antes-do-credito",
+    categoria: "Crédito pessoal",
+    titulo:
+      "Como organizar as suas finanças antes de apresentar um pedido de crédito",
+    resumo:
+      "Alguns aspetos que podem ajudar a compreender melhor a sua situação financeira antes de iniciar um pedido de crédito.",
+    data: "10 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/organizar-financas.webp",
+    imagemAlt:
+      "Cliente a organizar documentos financeiros antes de solicitar crédito",
+    imagemDestaque: "/images/informativos/organizar-financas.webp",
+    imagemDestaqueAlt:
+      "Análise financeira pessoal antes de um pedido de crédito",
+
+    introducao:
+      "Antes de apresentar um pedido de crédito, pode ser útil analisar a sua situação financeira atual e reunir alguma informação relevante. Esta preparação não garante qualquer decisão por parte da instituição de crédito, mas pode ajudar a compreender melhor os compromissos financeiros já existentes e a necessidade que pretende financiar.",
+
+    secoes: [
+      {
+        titulo: "Conheça os seus rendimentos",
+        paragrafos: [
+          "O primeiro passo consiste em identificar quais são os rendimentos regulares do agregado familiar.",
+          "Esta informação ajuda a compreender a capacidade financeira disponível para assumir novos compromissos.",
+        ],
+      },
+      {
+        titulo: "Analise as despesas existentes",
+        paragrafos: [
+          "Além dos rendimentos, é importante conhecer as despesas regulares e os encargos financeiros atualmente existentes.",
+          "A análise destes elementos permite ter uma visão mais completa da situação financeira.",
+        ],
+      },
+      {
+        titulo: "Verifique responsabilidades de crédito",
+        paragrafos: [
+          "Caso existam outros créditos em curso, pode ser útil conhecer os respetivos montantes em dívida e prestações mensais.",
+          "Esta informação poderá ser relevante para futuras análises de crédito.",
+        ],
+      },
+      {
+        titulo: "Crie uma reserva financeira",
+        paragrafos: [
+          "Sempre que possível, é aconselhável manter uma reserva financeira para situações imprevistas.",
+          "A existência de poupança pode contribuir para uma gestão financeira mais equilibrada.",
+        ],
+      },
+      {
+        titulo: "Prepare o primeiro contacto",
+        paragrafos: [
+          "Reunir informação antecipadamente pode facilitar o esclarecimento das questões iniciais durante o processo.",
+          "A documentação e os elementos concretos necessários dependem sempre da situação apresentada.",
+        ],
+      },
+    ],
+  },
+
+  {
+    slug: "credito-para-obras",
+    categoria: "Crédito pessoal",
+    titulo:
+      "Crédito para obras: que aspetos deve considerar antes de iniciar o processo",
+    resumo:
+      "Conheça alguns elementos habitualmente analisados quando o objetivo do financiamento é realizar obras ou melhorias numa habitação.",
+    data: "10 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/credito-obras.webp",
+    imagemAlt: "Planeamento de obras financiadas através de crédito",
+    imagemDestaque: "/images/informativos/credito-obras.webp",
+    imagemDestaqueAlt: "Projeto de remodelação habitacional",
+
+    introducao:
+      "Quando existe a intenção de realizar obras ou melhorias numa habitação, pode surgir a necessidade de recorrer a financiamento. Antes de iniciar o processo, é importante definir claramente os objetivos do projeto e compreender quais as informações que poderão ser necessárias.",
+
+    secoes: [
+      {
+        titulo: "Defina o objetivo das obras",
+        paragrafos: [
+          "O primeiro passo consiste em identificar concretamente quais os trabalhos que pretende realizar.",
+          "Uma descrição clara da finalidade ajuda a enquadrar a necessidade de financiamento.",
+        ],
+      },
+      {
+        titulo: "Estime os custos previstos",
+        paragrafos: [
+          "Sempre que possível, procure obter uma estimativa dos custos associados ao projeto.",
+          "Esta informação pode ajudar a determinar o montante pretendido.",
+        ],
+      },
+      {
+        titulo: "Prepare documentação relacionada com a obra",
+        paragrafos: [
+          "Dependendo da situação, poderão ser solicitados elementos relacionados com os trabalhos a realizar.",
+          "A documentação necessária varia de acordo com as características do processo.",
+        ],
+      },
+      {
+        titulo: "Apresentação do pedido",
+        paragrafos: [
+          "O pedido de financiamento será analisado de acordo com os critérios aplicáveis à operação.",
+          "Podem ser solicitadas informações complementares durante a análise.",
+        ],
+      },
+      {
+        titulo: "A decisão pertence à instituição",
+        paragrafos: [
+          "A apresentação de um pedido não constitui garantia de aprovação.",
+          "A decisão final compete sempre à instituição de crédito.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "analise-pedido-credito-pessoal",
+    categoria: "Crédito pessoal",
+    titulo:
+      "Que fatores podem ser considerados na análise de um pedido de crédito pessoal?",
+    resumo:
+      "Conheça alguns dos elementos normalmente avaliados durante a análise de um pedido de crédito.",
+    data: "10 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/fatores-analise-credito.webp",
+    imagemAlt: "Análise financeira de um pedido de crédito pessoal",
+    imagemDestaque: "/images/informativos/fatores-analise-credito.webp",
+    imagemDestaqueAlt: "Avaliação de informação financeira",
+
+    introducao:
+      "A análise de um pedido de crédito envolve diferentes elementos relacionados com a situação apresentada pelo requerente. Os critérios concretos dependem da instituição de crédito e das características da operação.",
+
+    secoes: [
+      {
+        titulo: "Situação profissional",
+        paragrafos: [
+          "A situação profissional constitui um dos elementos que pode ser considerado durante a análise.",
+          "A informação necessária varia consoante cada processo.",
+        ],
+      },
+      {
+        titulo: "Rendimentos apresentados",
+        paragrafos: [
+          "Os rendimentos disponíveis ajudam a enquadrar a capacidade financeira apresentada.",
+          "Podem ser solicitados comprovativos para validação da informação.",
+        ],
+      },
+      {
+        titulo: "Encargos existentes",
+        paragrafos: [
+          "As responsabilidades financeiras atualmente existentes podem ser consideradas na análise.",
+          "O objetivo é compreender o conjunto dos compromissos financeiros assumidos.",
+        ],
+      },
+      {
+        titulo: "Documentação fornecida",
+        paragrafos: [
+          "A qualidade e atualização da documentação apresentada podem facilitar o processo.",
+          "Informação incompleta pode originar pedidos adicionais de esclarecimento.",
+        ],
+      },
+      {
+        titulo: "Decisão final",
+        paragrafos: [
+          "A aprovação não é automática e depende da avaliação efetuada pela instituição.",
+          "As condições aplicáveis são definidas de acordo com a análise realizada.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "credito-bens-duradouros",
+    categoria: "Crédito pessoal",
+    titulo:
+      "Financiamento para aquisição de bens duradouros: o que deve analisar",
+    resumo:
+      "Informações úteis para quem pretende recorrer a financiamento para aquisição de equipamentos ou outros bens de utilização prolongada.",
+    data: "10 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/financiamento-aquisicao-bens.webp",
+    imagemAlt: "Aquisição de equipamentos através de financiamento",
+    imagemDestaque: "/images/informativos/financiamento-aquisicao-bens.webp",
+    imagemDestaqueAlt: "Planeamento financeiro para compra de bens duradouros",
+
+    introducao:
+      "A aquisição de determinados equipamentos ou bens duradouros pode representar um investimento significativo. Antes de recorrer a financiamento, é importante compreender a necessidade e analisar as condições associadas à operação.",
+
+    secoes: [
+      {
+        titulo: "Identifique a necessidade",
+        paragrafos: [
+          "O primeiro passo consiste em definir qual o bem que pretende adquirir.",
+          "A finalidade apresentada ajuda a enquadrar o pedido.",
+        ],
+      },
+      {
+        titulo: "Determine o montante necessário",
+        paragrafos: [
+          "Conhecer o custo previsto permite estimar o valor pretendido para financiamento.",
+          "O montante será posteriormente sujeito à análise aplicável.",
+        ],
+      },
+      {
+        titulo: "Compare condições",
+        paragrafos: [
+          "Quando existirem diferentes propostas, procure comparar os respetivos elementos de forma equivalente.",
+          "A prestação mensal não deve ser o único critério analisado.",
+        ],
+      },
+      {
+        titulo: "Verifique os custos associados",
+        paragrafos: [
+          "As condições da operação podem incluir diferentes encargos e custos.",
+          "É importante compreender o impacto global da solução apresentada.",
+        ],
+      },
+      {
+        titulo: "Analise a documentação",
+        paragrafos: [
+          "A documentação pré-contratual permite conhecer as características da operação.",
+          "Antes da contratação, deve analisar cuidadosamente toda a informação disponibilizada.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "capital-de-giro-empresas",
+    categoria: "Crédito empresarial",
+    titulo:
+      "Capital de giro: porque é importante para a gestão financeira de uma empresa?",
+    resumo:
+      "Compreenda o papel do capital de giro e porque a gestão da tesouraria é essencial para a atividade de qualquer empresa.",
+    data: "8 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/capital-de-giro.webp",
+    imagemAlt:
+      "Gestor financeiro a analisar necessidades de tesouraria de uma empresa",
+    imagemDestaque: "/images/informativos/capital-de-giro.webp",
+    imagemDestaqueAlt:
+      "Análise financeira relacionada com capital de giro empresarial",
+
+    introducao:
+      "Mesmo empresas rentáveis podem enfrentar dificuldades temporárias de liquidez. O capital de giro está diretamente relacionado com a capacidade de uma empresa cumprir os seus compromissos financeiros do dia a dia e assegurar a continuidade da operação.",
+
+    secoes: [
+      {
+        titulo: "O que é o capital de giro?",
+        paragrafos: [
+          "O capital de giro representa os recursos financeiros utilizados para suportar as necessidades operacionais da empresa.",
+          "Inclui, por exemplo, pagamentos a fornecedores, salários, impostos e outras despesas correntes necessárias ao funcionamento da atividade.",
+        ],
+      },
+      {
+        titulo: "Porque podem surgir necessidades de tesouraria?",
+        paragrafos: [
+          "Nem sempre os recebimentos acontecem ao mesmo ritmo dos pagamentos.",
+          "Quando os clientes pagam mais tarde do que o previsto ou quando existem aumentos temporários das despesas, podem surgir necessidades de liquidez.",
+        ],
+      },
+      {
+        titulo: "Como melhorar a gestão do capital de giro?",
+        paragrafos: [
+          "Uma gestão financeira adequada inclui o acompanhamento regular dos recebimentos e pagamentos da empresa.",
+          "A previsão de tesouraria pode ajudar a identificar antecipadamente necessidades futuras de financiamento.",
+        ],
+      },
+      {
+        titulo: "Quando pode ser necessário financiamento?",
+        paragrafos: [
+          "Algumas empresas recorrem a soluções de financiamento para responder a necessidades temporárias de tesouraria.",
+          "A adequação da solução depende da situação financeira da empresa e das condições disponíveis.",
+        ],
+      },
+      {
+        titulo: "A importância do planeamento",
+        paragrafos: [
+          "O acompanhamento contínuo da tesouraria permite reduzir riscos operacionais e melhorar a capacidade de resposta da empresa perante necessidades inesperadas.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "fluxo-de-caixa-empresas",
+    categoria: "Crédito empresarial",
+    titulo: "Fluxo de caixa: porque deve ser acompanhado regularmente?",
+    resumo:
+      "Conheça a importância do controlo dos recebimentos e pagamentos para uma gestão financeira mais eficiente.",
+    data: "8 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/fluxo-de-caixa.webp",
+    imagemAlt:
+      "Gestor financeiro a analisar entradas e saídas de caixa de uma empresa",
+    imagemDestaque: "/images/informativos/fluxo-de-caixa.webp",
+    imagemDestaqueAlt:
+      "Planeamento financeiro e gestão de fluxo de caixa empresarial",
+
+    introducao:
+      "O fluxo de caixa permite acompanhar a movimentação financeira da empresa e compreender a sua capacidade para cumprir obrigações financeiras ao longo do tempo.",
+
+    secoes: [
+      {
+        titulo: "O que é o fluxo de caixa?",
+        paragrafos: [
+          "O fluxo de caixa corresponde ao registo das entradas e saídas de dinheiro da empresa durante determinado período.",
+          "Este acompanhamento ajuda a compreender a liquidez disponível em cada momento.",
+        ],
+      },
+      {
+        titulo: "Porque é importante acompanhar regularmente?",
+        paragrafos: [
+          "Uma empresa pode apresentar resultados positivos e, ainda assim, enfrentar dificuldades de tesouraria.",
+          "A monitorização contínua permite identificar antecipadamente eventuais desequilíbrios financeiros.",
+        ],
+      },
+      {
+        titulo: "Que informações devem ser analisadas?",
+        paragrafos: [
+          "Os recebimentos previstos, pagamentos futuros, salários, impostos e outros compromissos financeiros devem ser considerados na análise.",
+        ],
+        lista: [
+          "Recebimentos de clientes;",
+          "Pagamentos a fornecedores;",
+          "Custos operacionais;",
+          "Impostos e contribuições;",
+          "Encargos financeiros.",
+        ],
+      },
+      {
+        titulo: "Como o fluxo de caixa pode apoiar decisões?",
+        paragrafos: [
+          "A informação financeira ajuda a planear investimentos, definir prioridades e avaliar necessidades de financiamento.",
+        ],
+      },
+      {
+        titulo: "Planeamento financeiro e sustentabilidade",
+        paragrafos: [
+          "A previsão de fluxos futuros permite melhorar a capacidade de gestão e reduzir situações de pressão financeira inesperada.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "garantias-financiamento-empresarial",
+    categoria: "Crédito empresarial",
+    titulo:
+      "Garantias num financiamento empresarial: porque podem ser solicitadas?",
+    resumo:
+      "Saiba o que são garantias e porque podem fazer parte da análise de um pedido de financiamento empresarial.",
+    data: "8 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/garantia-financiamento-empresarial.webp",
+    imagemAlt:
+      "Empresário a analisar documentação relacionada com garantias financeiras",
+    imagemDestaque:
+      "/images/informativos/garantia-financiamento-empresarial.webp",
+    imagemDestaqueAlt:
+      "Análise de garantias associadas a financiamento empresarial",
+
+    introducao:
+      "Em determinados processos de financiamento, a instituição de crédito pode solicitar garantias adicionais para suportar a análise de risco da operação.",
+
+    secoes: [
+      {
+        titulo: "O que são garantias?",
+        paragrafos: [
+          "As garantias são mecanismos utilizados para reforçar a segurança associada a uma operação de crédito.",
+          "A sua existência e natureza dependem das características da operação e dos critérios da instituição financeira.",
+        ],
+      },
+      {
+        titulo: "Porque podem ser solicitadas?",
+        paragrafos: [
+          "As garantias podem contribuir para a avaliação do risco associado ao financiamento solicitado.",
+          "A análise considera diversos fatores, incluindo a situação financeira da empresa e a finalidade da operação.",
+        ],
+      },
+      {
+        titulo: "Que tipos de garantias podem existir?",
+        paragrafos: [
+          "Dependendo da operação, podem existir diferentes formas de garantia.",
+        ],
+        lista: [
+          "Garantias pessoais;",
+          "Garantias reais;",
+          "Garantias bancárias;",
+          "Garantias mútuas;",
+          "Outras garantias previstas contratualmente.",
+        ],
+      },
+      {
+        titulo: "A existência de garantias garante aprovação?",
+        paragrafos: [
+          "Não. A decisão depende sempre da análise global efetuada pela instituição de crédito.",
+        ],
+      },
+      {
+        titulo: "Compreenda as condições da operação",
+        paragrafos: [
+          "Antes de aceitar qualquer garantia, é importante compreender os seus efeitos e as responsabilidades associadas.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "plano-negocios-financiamento",
+    categoria: "Crédito empresarial",
+    titulo: "Porque pode ser importante apresentar um plano de negócios?",
+    resumo:
+      "Conheça o papel do plano de negócios na preparação de um pedido de financiamento empresarial.",
+    data: "8 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem: "/images/informativos/planos-de-negocios.webp",
+    imagemAlt:
+      "Empresários a analisar um plano de negócios e projeções financeiras",
+    imagemDestaque: "/images/informativos/planos-de-negocios.webp",
+    imagemDestaqueAlt: "Planeamento estratégico para financiamento empresarial",
+
+    introducao:
+      "Em alguns processos de financiamento, pode ser útil apresentar informação estruturada sobre a atividade da empresa, os seus objetivos e a finalidade do investimento pretendido.",
+
+    secoes: [
+      {
+        titulo: "O que é um plano de negócios?",
+        paragrafos: [
+          "O plano de negócios é um documento que descreve a atividade da empresa, os seus objetivos e a forma como pretende alcançar determinados resultados.",
+        ],
+      },
+      {
+        titulo: "Que informação pode incluir?",
+        paragrafos: [
+          "O conteúdo depende das características da empresa e da finalidade do financiamento.",
+        ],
+        lista: [
+          "Descrição da atividade;",
+          "Objetivos empresariais;",
+          "Análise de mercado;",
+          "Projeções financeiras;",
+          "Necessidades de investimento.",
+        ],
+      },
+      {
+        titulo: "Porque pode ser relevante para o financiamento?",
+        paragrafos: [
+          "A apresentação organizada da informação pode facilitar a compreensão da finalidade da operação e do enquadramento do investimento.",
+        ],
+      },
+      {
+        titulo: "O plano garante aprovação?",
+        paragrafos: [
+          "Não. O plano constitui apenas um dos elementos que podem ser considerados durante a análise.",
+          "A decisão final pertence sempre à instituição de crédito.",
+        ],
+      },
+      {
+        titulo: "Preparação e atualização",
+        paragrafos: [
+          "Sempre que possível, a informação apresentada deve ser atualizada e refletir a realidade da empresa e dos objetivos pretendidos.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "comprovativos-rendimentos-capacidade-financeira",
+    categoria: "Documentação",
+    titulo:
+      "Que comprovativos de rendimentos podem ser pedidos num processo de crédito?",
+    resumo:
+      "Saiba que documentos podem ajudar a demonstrar rendimentos, encargos e capacidade financeira num processo de crédito pessoal ou empresarial.",
+
+    data: "5 outubro 2026",
+    tempoLeitura: "5 min",
+
+    imagem:
+      "/images/informativos/comprovativos-rendimentos-capacidade-financeira.webp",
+    imagemAlt:
+      "Documentos financeiros e comprovativos de rendimentos utilizados num processo de crédito",
+    imagemDestaque:
+      "/images/informativos/comprovativos-rendimentos-capacidade-financeira.webp",
+    imagemDestaqueAlt:
+      "Documentação financeira com valores em euros durante uma análise de crédito",
+
+    introducao:
+      "Num processo de crédito, a instituição financeira pode precisar de avaliar a situação económica do cliente, os rendimentos disponíveis e os encargos existentes. Os documentos solicitados podem variar consoante se trate de um crédito pessoal, habitação, automóvel ou de uma operação destinada a uma empresa.",
+
+    secoes: [
+      {
+        titulo: "Crédito pessoal: rendimentos e encargos",
+        paragrafos: [
+          "Num pedido de crédito pessoal, podem ser solicitados documentos que permitam comprovar os rendimentos e conhecer os principais encargos financeiros do requerente.",
+          "Entre os elementos que podem ser considerados encontram-se comprovativos de vencimento, informação fiscal e outros documentos adequados à situação profissional do cliente.",
+          "Por exemplo, uma pessoa com um rendimento mensal líquido de 1.500 € e encargos mensais de 450 € apresenta uma situação financeira diferente de outra pessoa com o mesmo rendimento, mas com encargos mensais de 900 €.",
+        ],
+      },
+      {
+        titulo: "Trabalhadores por conta de outrem",
+        paragrafos: [
+          "Para trabalhadores por conta de outrem, podem ser pedidos documentos que comprovem a relação profissional e os rendimentos auferidos.",
+          "Dependendo da instituição e do tipo de financiamento, podem ser solicitados recibos de vencimento, declaração da entidade empregadora, informação fiscal ou outros comprovativos.",
+          "A documentação permite enquadrar o rendimento apresentado e perceber a estabilidade da situação profissional.",
+        ],
+      },
+      {
+        titulo: "Trabalhadores independentes",
+        paragrafos: [
+          "No caso de trabalhadores independentes, a análise pode exigir informação adicional sobre a atividade profissional e os rendimentos obtidos.",
+          "Podem ser considerados elementos fiscais, declarações de rendimentos e outros documentos relacionados com a atividade exercida.",
+          "Por exemplo, uma pessoa que tenha declarado 24.000 € de rendimento anual deverá apresentar a documentação que permita à instituição enquadrar corretamente a origem e a regularidade desses rendimentos.",
+        ],
+      },
+      {
+        titulo: "Empresas: informação financeira",
+        paragrafos: [
+          "Num processo de crédito empresarial, a documentação tende a ser mais abrangente, uma vez que a instituição precisa de conhecer a situação financeira da empresa.",
+          "Podem ser solicitados documentos contabilísticos, informação fiscal, extratos bancários e elementos relativos à atividade e às responsabilidades financeiras existentes.",
+          "Uma empresa com uma faturação anual de 250.000 € não é necessariamente equivalente a outra com a mesma faturação, uma vez que os custos, dívidas, margens e outros compromissos podem ser diferentes.",
+        ],
+      },
+      {
+        titulo: "Extratos bancários e movimentos financeiros",
+        paragrafos: [
+          "Em determinadas operações, podem ser solicitados extratos bancários para complementar a informação financeira apresentada.",
+          "Os movimentos da conta podem ajudar a enquadrar os rendimentos recebidos, pagamentos regulares e outros compromissos financeiros.",
+          "Por exemplo, entradas mensais de 2.000 € não devem ser analisadas isoladamente, sendo necessário considerar também os pagamentos e encargos associados à situação financeira do cliente.",
+        ],
+      },
+      {
+        titulo: "A documentação não significa aprovação automática",
+        paragrafos: [
+          "A apresentação dos documentos solicitados não garante a aprovação do financiamento.",
+          "A decisão depende da análise efetuada pela instituição de crédito, das características da operação e dos critérios aplicáveis a cada situação.",
+          "O mesmo conjunto de documentos pode resultar em decisões diferentes consoante o montante solicitado, o prazo, os encargos existentes e restantes elementos considerados na análise.",
+        ],
+      },
+      {
+        titulo: "Prepare a documentação antes de iniciar o processo",
+        paragrafos: [
+          "Ter a documentação financeira organizada pode tornar o processo mais simples e evitar pedidos adicionais de informação.",
+          "Antes de avançar, é importante confirmar quais os documentos necessários para o tipo de crédito pretendido e para a situação específica do requerente.",
+          "No caso de empresas, a preparação prévia da documentação contabilística e fiscal pode ser especialmente importante quando está em causa um financiamento de vários milhares de euros.",
         ],
       },
     ],

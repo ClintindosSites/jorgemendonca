@@ -164,7 +164,7 @@ export default async function InformativoPage({ params }: PageProps) {
 
             <div className="mt-16 border border-[#D9E1E5] bg-[#F7F9FA] p-7 lg:p-8">
               <div className="flex gap-5">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#102A43] text-[#69B578]">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#006f34] text-[#fefefe]">
                   <BookOpen size={18} strokeWidth={1.5} />
                 </div>
 
